@@ -15,3 +15,7 @@ def home(request):
         form = AppointmentForm()
 
     return render(request, 'home.html', {'form': form})
+
+
+def service(request):
+    return render(request,"services.html")
