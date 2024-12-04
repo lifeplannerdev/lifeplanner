@@ -162,145 +162,127 @@
     </nav>
     
 <style>
+/* Services Section */
+.services-section {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 60px;
+}
 
-        /* Services Section */
-        .services-section {
-            padding: 50px 20px;
-            max-width: 1200px;
-            margin: auto;
-            margin-top: 60px;
-           
-        }
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Always 4 cards in a row */
+    gap: 20px;
+}
 
-        .services-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
+.service-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-        .service-card {
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
 
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-        }
+.service-icon {
+    font-size: 50px;
+    color: rgb(22, 100, 173);
+    margin-bottom: 15px;
+}
 
-        .service-icon {
-            font-size: 50px;
-            color: rgb(22, 100, 173);
-            margin-bottom: 15px;
-        }
+.service-title {
+    font-size: 18px; /* Adjusted font size */
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: rgb(22, 100, 173);
+}
 
-        .service-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: rgb(22, 100, 173);
-        }
+/* Responsive Design */
+@media (max-width: 768px) {
+    .services-container {
+        grid-template-columns: repeat(4, 1fr); /* Still 4 columns */
+    }
+}
 
-        .service-description {
-            font-size: 16px;
-            color: #555;
-        }
+@media (max-width: 480px) {
+    .services-container {
+        grid-template-columns: repeat(4, 1fr); /* Still 4 columns */
+        gap: 10px;
+    }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .services-container {
-                grid-template-columns: repeat(3, 1fr); /* Ensures 3 columns on smaller screens */
-            }
+    .service-card {
+        padding: 10px; /* Reduced padding for small screens */
+    }
 
-            .service-card {
-                padding: 15px;
-            }
+    .service-icon {
+        font-size: 30px; /* Adjusted icon size */
+    }
 
-            .service-title {
-                font-size: 20px;
-            }
+    .service-title {
+        font-size: 14px; /* Adjusted title size */
+    }
+}
 
-            .service-description {
-                font-size: 14px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .services-container {
-                grid-template-columns: repeat(3, 1fr); /* 3 columns maintained even on very small screens */
-                gap: 10px;
-            }
-
-            .service-card {
-                padding: 10px;
-            }
-
-            .service-icon {
-                font-size: 40px;
-            }
-
-            .service-title {
-                font-size: 12px;
-            }
-
-            .service-description {
-                font-size: 12px;
-            }
-        }
-    </style>
-
-
-
+</style>
 
 <section class="services-section">
     <div class="services-container">
         <!-- Service Card 1 -->
         <div class="service-card">
-            <div class="service-icon"><i class="fa-solid fa-people-arrows"></i></div>
-            <h3 class="service-title">Career Counselling</h3>
-            
+            <div class="service-icon"><i class="fa-solid fa-chalkboard-teacher"></i></div>
+            <h3 class="service-title">Seminars & Webinars</h3>
         </div>
 
         <!-- Service Card 2 -->
         <div class="service-card">
-            <div class="service-icon"><i class="fa-solid fa-book"></i></div>
-            <h3 class="service-title">Shortlisting Education Platforms</h3>
-            
+            <div class="service-icon"><i class="fa-solid fa-people-arrows"></i></div>
+            <h3 class="service-title">Academic & Career Counselling</h3>
         </div>
 
         <!-- Service Card 3 -->
         <div class="service-card">
-            <div class="service-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
-            <h3 class="service-title">Scholarship Guidance</h3>
-            
+            <div class="service-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+            <h3 class="service-title">Assessment on Profile</h3>
         </div>
 
         <!-- Service Card 4 -->
         <div class="service-card">
-            <div class="service-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
-            <h3 class="service-title">Building a Student Profile</h3>
-            
+            <div class="service-icon"><i class="fa-solid fa-file-signature"></i></div>
+            <h3 class="service-title">Admission</h3>
         </div>
 
         <!-- Service Card 5 -->
         <div class="service-card">
-            <div class="service-icon"><i class="fa-solid fa-plane-departure"></i></div>
-            <h3 class="service-title">Pre-Departure Briefing</h3>
-           
+            <div class="service-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+            <h3 class="service-title">Financial Aid</h3>
         </div>
 
         <!-- Service Card 6 -->
         <div class="service-card">
+            <div class="service-icon"><i class="fa-solid fa-passport"></i></div>
+            <h3 class="service-title">Visa</h3>
+        </div>
+
+        <!-- Service Card 7 -->
+        <div class="service-card">
+            <div class="service-icon"><i class="fa-solid fa-plane-departure"></i></div>
+            <h3 class="service-title">Pre-Departure</h3>
+        </div>
+
+        <!-- Service Card 8 -->
+        <div class="service-card">
             <div class="service-icon"><i class="fa-solid fa-plane-arrival"></i></div>
-            <h3 class="service-title">Post-Landing Assistance</h3>
-            
+            <h3 class="service-title">Post-Landing</h3>
         </div>
     </div>
 </section>
+
 
 
 <h3 class="text-center" style="color:rgb(22, 100, 173);font-weight: bold;">SERVICES</h3>
