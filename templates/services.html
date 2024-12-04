@@ -238,63 +238,154 @@
 }
 
 </style>
+<h3 class="text-center" style="color:rgb(22, 100, 173);font-weight: bold; margin-bottom: 30px;margin-top: 130px;">OUR SERVICES</h3>
 
 <section class="services-section">
     <div class="services-container">
         <!-- Service Card 1 -->
-        <div class="service-card">
+        <a href="#seminars" class="service-card" style="text-decoration:none;">
             <div class="service-icon"><i class="fa-solid fa-chalkboard-teacher"></i></div>
             <h3 class="service-title">Seminars</h3>
-        </div>
+        </a>
 
         <!-- Service Card 2 -->
-        <div class="service-card">
+        <a href="#counselling" class="service-card" style="text-decoration:none;">
             <div class="service-icon"><i class="fa-solid fa-people-arrows"></i></div>
             <h3 class="service-title">Counselling</h3>
-        </div>
+        </a>
 
         <!-- Service Card 3 -->
-        <div class="service-card">
+        <a href="#profile" class="service-card" style="text-decoration:none;">
             <div class="service-icon"><i class="fa-solid fa-clipboard-check"></i></div>
             <h3 class="service-title">Profile</h3>
-        </div>
+        </a>
 
         <!-- Service Card 4 -->
-        <div class="service-card">
+        <a href="#admission" class="service-card" style="text-decoration:none;">
             <div class="service-icon"><i class="fa-solid fa-file-signature"></i></div>
             <h3 class="service-title">Admission</h3>
-        </div>
+        </a>
 
         <!-- Service Card 5 -->
-        <div class="service-card">
+        <a href="#financial-aid" class="service-card" style="text-decoration:none;">
             <div class="service-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
             <h3 class="service-title">Financial Aid</h3>
-        </div>
+        </a>
 
         <!-- Service Card 6 -->
-        <div class="service-card">
+        <a href="#visa" class="service-card" style="text-decoration:none;">
             <div class="service-icon"><i class="fa-solid fa-passport"></i></div>
-            <h3 class="service-title">Visa </h3>
-        </div>
+            <h3 class="service-title">Visa</h3>
+        </a>
 
         <!-- Service Card 7 -->
-        <div class="service-card">
+        <a href="#departure" class="service-card" style="text-decoration:none;">
             <div class="service-icon"><i class="fa-solid fa-plane-departure"></i></div>
             <h3 class="service-title">Departure</h3>
-        </div>
+        </a>
 
         <!-- Service Card 8 -->
-        <div class="service-card">
+        <a href="#landing" class="service-card" style="text-decoration:none;">
             <div class="service-icon"><i class="fa-solid fa-plane-arrival"></i></div>
             <h3 class="service-title">Landing</h3>
-        </div>
+        </a>
     </div>
 </section>
 
+<section class="services-details-section">
+    <div id="seminars" class="service-detail">
+        <h4 class="service-heading">Seminars & Webinars</h4>
+        <p>Join our expert-led seminars and webinars designed to help students and professionals gain insights into academic and career opportunities worldwide.</p>
+    </div>
 
+    <div id="counselling" class="service-detail">
+        <h4 class="service-heading">Academic & Career Counselling</h4>
+        <p>Get personalized guidance from experienced counselors to make informed decisions about your academic and career paths.</p>
+    </div>
 
-<h3 class="text-center" style="color:rgb(22, 100, 173);font-weight: bold;">SERVICES</h3>
+    <div id="profile" class="service-detail">
+        <h4 class="service-heading">Assessment on Profile</h4>
+        <p>Receive an in-depth evaluation of your academic, professional, and extracurricular profile to identify strengths and improvement areas.</p>
+    </div>
 
+    <div id="admission" class="service-detail">
+        <h4 class="service-heading">Admission</h4>
+        <p>Navigate the admission process seamlessly with our step-by-step assistance, from application submission to securing your place.</p>
+    </div>
+
+    <div id="financial-aid" class="service-detail">
+        <h4 class="service-heading">Financial Aid</h4>
+        <p>Explore financial aid options, scholarships, and grants with our expert advisors to support your educational journey.</p>
+    </div>
+
+    <div id="visa" class="service-detail">
+        <h4 class="service-heading">Visa</h4>
+        <p>Streamline your visa application process with our comprehensive guidance on documentation and interview preparation.</p>
+    </div>
+
+    <div id="departure" class="service-detail">
+        <h4 class="service-heading">Pre-Departure</h4>
+        <p>Prepare for a smooth transition with our pre-departure sessions covering travel tips, cultural orientation, and more.</p>
+    </div>
+
+    <div id="landing" class="service-detail">
+        <h4 class="service-heading">Post-Landing</h4>
+        <p>Enjoy peace of mind with our post-landing services, including airport pick-up, accommodation assistance, and local guidance.</p>
+    </div>
+</section>
+<style>
+    .services-details-section {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-detail {
+        margin-bottom: 30px;
+        padding: 20px;
+        background-color: #f7f9fc;
+        border-left: 5px solid rgb(22, 100, 173);
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+    }
+
+    .service-detail:hover {
+        transform: scale(1.02);
+        background-color: #eef4fb;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    }
+
+    .service-heading {
+        font-size: 22px;
+        font-weight: bold;
+        color: rgb(22, 100, 173);
+        margin-bottom: 10px;
+    }
+
+    .service-detail p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #555;
+    }
+
+    @media (max-width: 768px) {
+        .services-details-section {
+            padding: 15px;
+        }
+
+        .service-heading {
+            font-size: 20px;
+        }
+
+        .service-detail p {
+            font-size: 14px;
+        }
+    }
+</style>
 
 
 <style>

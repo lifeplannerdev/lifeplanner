@@ -871,7 +871,138 @@
             }
         }
     </style>
-    
+    <style>
+        /* Services Section */
+        .services-section {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: auto;
+            margin-top: 30px;
+           
+            
+        }
+        
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Always 4 cards in a row */
+            gap: 20px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .service-icon {
+            font-size: 50px;
+            color: rgb(22, 100, 173);
+            margin-bottom: 15px;
+        }
+        
+        .service-title {
+            font-size: 18px; /* Adjusted font size */
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: rgb(22, 100, 173);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .services-container {
+                grid-template-columns: repeat(4, 1fr); /* Still 4 columns */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .services-section {
+            
+            display: flex;
+            justify-content: center;
+            margin-top:-50px;
+            
+        }
+            .services-container {
+                grid-template-columns: repeat(4, 1fr); /* Still 4 columns */
+                gap: 10px;
+            }
+        
+            .service-card {
+                padding: 10px; /* Reduced padding for small screens */
+            }
+        
+            .service-icon {
+                font-size: 30px; /* Adjusted icon size */
+            }
+        
+            .service-title {
+                font-size: 12px; /* Adjusted title size */
+            }
+        }
+        
+        </style>
+        <h3 class="text-center" style="color:rgb(22, 100, 173);font-weight: bold; margin-bottom: 30px;margin-top: 30px;">OUR SERVICES</h3>
+        
+        <section class="services-section">
+            <div class="services-container">
+                <!-- Service Card 1 -->
+                <a href="#seminars" class="service-card" style="text-decoration:none;">
+                    <div class="service-icon"><i class="fa-solid fa-chalkboard-teacher"></i></div>
+                    <h3 class="service-title">Seminars</h3>
+                </a>
+        
+                <!-- Service Card 2 -->
+                <a href="#counselling" class="service-card" style="text-decoration:none;">
+                    <div class="service-icon"><i class="fa-solid fa-people-arrows"></i></div>
+                    <h3 class="service-title">Counselling</h3>
+                </a>
+        
+                <!-- Service Card 3 -->
+                <a href="#profile" class="service-card" style="text-decoration:none;">
+                    <div class="service-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+                    <h3 class="service-title">Profile</h3>
+                </a>
+        
+                <!-- Service Card 4 -->
+                <a href="#admission" class="service-card" style="text-decoration:none;">
+                    <div class="service-icon"><i class="fa-solid fa-file-signature"></i></div>
+                    <h3 class="service-title">Admission</h3>
+                </a>
+        
+                <!-- Service Card 5 -->
+                <a href="#financial-aid" class="service-card" style="text-decoration:none;">
+                    <div class="service-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                    <h3 class="service-title">Financial Aid</h3>
+                </a>
+        
+                <!-- Service Card 6 -->
+                <a href="#visa" class="service-card" style="text-decoration:none;">
+                    <div class="service-icon"><i class="fa-solid fa-passport"></i></div>
+                    <h3 class="service-title">Visa</h3>
+                </a>
+        
+                <!-- Service Card 7 -->
+                <a href="#departure" class="service-card" style="text-decoration:none;">
+                    <div class="service-icon"><i class="fa-solid fa-plane-departure"></i></div>
+                    <h3 class="service-title">Departure</h3>
+                </a>
+        
+                <!-- Service Card 8 -->
+                <a href="#landing" class="service-card" style="text-decoration:none;">
+                    <div class="service-icon"><i class="fa-solid fa-plane-arrival"></i></div>
+                    <h3 class="service-title">Landing</h3>
+                </a>
+            </div>
+        </section>
+        
     <div class="profile-cards-wrapper">
         <h2 class="profile-heading">OUR TEAM</h2>
         <div class="profile-cards-container">
