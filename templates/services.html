@@ -28,8 +28,7 @@
         font-family: myfont;
        }
         .navbar {
-    background: rgb(12, 71, 126);
-    
+    background: rgb(12, 71, 126); 
     padding: 0.5rem;
     display: flex;
     justify-content: space-between;
@@ -161,230 +160,149 @@
         </div>
     </nav>
     
-<style>
-/* Services Section */
-.services-section {
-    padding: 40px 20px;
-    max-width: 1000px;
-    margin: auto;
-    margin-top: 60px;
-   
+
+    <section class="services-details-section">
+        <h2 class="section-title" style="margin-top: 50px;">OUR SERVICE</h2>
+        <div id="seminars" class="service-detail">
+            <div class="service-icon"><i class="fa-solid fa-chalkboard-teacher"></i></div>
+            <h4 class="service-heading">Seminars & Webinars</h4>
+            <p>Join our expert-led seminars and webinars designed to help students and professionals gain insights into academic and career opportunities worldwide.</p>
+        </div>
     
-}
-
-.services-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Always 4 cards in a row */
-    gap: 20px;
-}
-
-.service-card {
-    background-color: white;
+        <div id="counselling" class="service-detail">
+            <div class="service-icon"><i class="fa-solid fa-people-arrows"></i></div>
+            <h4 class="service-heading">Academic & Career Counselling</h4>
+            <p>Get personalized guidance from experienced counselors to make informed decisions about your academic and career paths.</p>
+        </div>
+    
+        <div id="profile" class="service-detail">
+            <div class="service-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+            <h4 class="service-heading">Assessment on Profile</h4>
+            <p>Receive an in-depth evaluation of your academic, professional, and extracurricular profile to identify strengths and improvement areas.</p>
+        </div>
+    
+        <div id="admission" class="service-detail">
+            <div class="service-icon"><i class="fa-solid fa-file-signature"></i></div>
+            <h4 class="service-heading">Admission</h4>
+            <p>Navigate the admission process seamlessly with our step-by-step assistance, from application submission to securing your place.</p>
+        </div>
+    
+        <div id="financial-aid" class="service-detail">
+            <div class="service-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+            <h4 class="service-heading">Financial Aid</h4>
+            <p>Explore financial aid options, scholarships, and grants with our expert advisors to support your educational journey.</p>
+        </div>
+    
+        <div id="visa" class="service-detail">
+            <div class="service-icon"><i class="fa-solid fa-passport"></i></div>
+            <h4 class="service-heading">Visa</h4>
+            <p>Streamline your visa application process with our comprehensive guidance on documentation and interview preparation.</p>
+        </div>
+    
+        <div id="departure" class="service-detail">
+            <div class="service-icon"><i class="fa-solid fa-plane-departure"></i></div>
+            <h4 class="service-heading">Pre-Departure</h4>
+            <p>Prepare for a smooth transition with our pre-departure sessions covering travel tips, cultural orientation, and more.</p>
+        </div>
+    
+        <div id="landing" class="service-detail">
+            <div class="service-icon"><i class="fa-solid fa-plane-arrival"></i></div>
+            <h4 class="service-heading">Post-Landing</h4>
+            <p>Enjoy peace of mind with our post-landing services, including airport pick-up, accommodation assistance, and local guidance.</p>
+        </div>
+    </section>
+    
+<style>
+   /* Overall Section Styling */
+.services-details-section {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-}
-
-.service-icon {
-    font-size: 50px;
-    color: rgb(22, 100, 173);
-    margin-bottom: 15px;
-}
-
-.service-title {
-    font-size: 18px; /* Adjusted font size */
+    font-size: 28px;
     font-weight: bold;
-    margin-bottom: 10px;
     color: rgb(22, 100, 173);
+    margin-bottom: 40px;
+}
+
+/* Individual Service Detail Cards */
+.service-detail {
+    margin-bottom: 30px;
+    padding: 25px;
+    background-color: #f8fbff;
+    border-left: 6px solid rgb(22, 100, 173);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    display: flex; /* Align items horizontally */
+    align-items: center;
+    gap: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.service-detail:hover {
+    transform: translateY(-5px);
+    background-color: #e9f3ff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon Styling */
+.service-icon {
+    font-size: 40px;
+    color: rgb(22, 100, 173);
+    flex-shrink: 0; /* Prevent icon from resizing */
+}
+
+/* Headings and Text */
+.service-heading {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(22, 100, 173);
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.service-detail p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    margin: 0;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .services-container {
-        grid-template-columns: repeat(4, 1fr); /* Still 4 columns */
-    }
-}
-
-@media (max-width: 480px) {
-    .services-section {
-    
-    display: flex;
-    justify-content: center;
-    
-}
-    .services-container {
-        grid-template-columns: repeat(4, 1fr); /* Still 4 columns */
-        gap: 10px;
-    }
-
-    .service-card {
-        padding: 10px; /* Reduced padding for small screens */
-    }
-
-    .service-icon {
-        font-size: 30px; /* Adjusted icon size */
-    }
-
-    .service-title {
-        font-size: 12px; /* Adjusted title size */
-    }
-}
-
-</style>
-<h3 class="text-center" style="color:rgb(22, 100, 173);font-weight: bold; margin-bottom: 30px;margin-top: 130px;">OUR SERVICES</h3>
-
-<section class="services-section">
-    <div class="services-container">
-        <!-- Service Card 1 -->
-        <a href="#seminars" class="service-card" style="text-decoration:none;">
-            <div class="service-icon"><i class="fa-solid fa-chalkboard-teacher"></i></div>
-            <h3 class="service-title">Seminars</h3>
-        </a>
-
-        <!-- Service Card 2 -->
-        <a href="#counselling" class="service-card" style="text-decoration:none;">
-            <div class="service-icon"><i class="fa-solid fa-people-arrows"></i></div>
-            <h3 class="service-title">Counselling</h3>
-        </a>
-
-        <!-- Service Card 3 -->
-        <a href="#profile" class="service-card" style="text-decoration:none;">
-            <div class="service-icon"><i class="fa-solid fa-clipboard-check"></i></div>
-            <h3 class="service-title">Profile</h3>
-        </a>
-
-        <!-- Service Card 4 -->
-        <a href="#admission" class="service-card" style="text-decoration:none;">
-            <div class="service-icon"><i class="fa-solid fa-file-signature"></i></div>
-            <h3 class="service-title">Admission</h3>
-        </a>
-
-        <!-- Service Card 5 -->
-        <a href="#financial-aid" class="service-card" style="text-decoration:none;">
-            <div class="service-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
-            <h3 class="service-title">Financial Aid</h3>
-        </a>
-
-        <!-- Service Card 6 -->
-        <a href="#visa" class="service-card" style="text-decoration:none;">
-            <div class="service-icon"><i class="fa-solid fa-passport"></i></div>
-            <h3 class="service-title">Visa</h3>
-        </a>
-
-        <!-- Service Card 7 -->
-        <a href="#departure" class="service-card" style="text-decoration:none;">
-            <div class="service-icon"><i class="fa-solid fa-plane-departure"></i></div>
-            <h3 class="service-title">Departure</h3>
-        </a>
-
-        <!-- Service Card 8 -->
-        <a href="#landing" class="service-card" style="text-decoration:none;">
-            <div class="service-icon"><i class="fa-solid fa-plane-arrival"></i></div>
-            <h3 class="service-title">Landing</h3>
-        </a>
-    </div>
-</section>
-
-<section class="services-details-section">
-    <div id="seminars" class="service-detail">
-        <h4 class="service-heading">Seminars & Webinars</h4>
-        <p>Join our expert-led seminars and webinars designed to help students and professionals gain insights into academic and career opportunities worldwide.</p>
-    </div>
-
-    <div id="counselling" class="service-detail">
-        <h4 class="service-heading">Academic & Career Counselling</h4>
-        <p>Get personalized guidance from experienced counselors to make informed decisions about your academic and career paths.</p>
-    </div>
-
-    <div id="profile" class="service-detail">
-        <h4 class="service-heading">Assessment on Profile</h4>
-        <p>Receive an in-depth evaluation of your academic, professional, and extracurricular profile to identify strengths and improvement areas.</p>
-    </div>
-
-    <div id="admission" class="service-detail">
-        <h4 class="service-heading">Admission</h4>
-        <p>Navigate the admission process seamlessly with our step-by-step assistance, from application submission to securing your place.</p>
-    </div>
-
-    <div id="financial-aid" class="service-detail">
-        <h4 class="service-heading">Financial Aid</h4>
-        <p>Explore financial aid options, scholarships, and grants with our expert advisors to support your educational journey.</p>
-    </div>
-
-    <div id="visa" class="service-detail">
-        <h4 class="service-heading">Visa</h4>
-        <p>Streamline your visa application process with our comprehensive guidance on documentation and interview preparation.</p>
-    </div>
-
-    <div id="departure" class="service-detail">
-        <h4 class="service-heading">Pre-Departure</h4>
-        <p>Prepare for a smooth transition with our pre-departure sessions covering travel tips, cultural orientation, and more.</p>
-    </div>
-
-    <div id="landing" class="service-detail">
-        <h4 class="service-heading">Post-Landing</h4>
-        <p>Enjoy peace of mind with our post-landing services, including airport pick-up, accommodation assistance, and local guidance.</p>
-    </div>
-</section>
-<style>
     .services-details-section {
-        max-width: 1000px;
-        margin: 40px auto;
         padding: 20px;
-        background-color: #fff;
-        border-radius: 15px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     .service-detail {
-        margin-bottom: 30px;
-        padding: 20px;
-        background-color: #f7f9fc;
-        border-left: 5px solid rgb(22, 100, 173);
-        border-radius: 10px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-        transition: all 0.3s ease;
+        flex-direction: column; /* Stack icon and content */
+        align-items: flex-start;
     }
 
-    .service-detail:hover {
-        transform: scale(1.02);
-        background-color: #eef4fb;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
-    }
-
-    .service-heading {
-        font-size: 22px;
-        font-weight: bold;
-        color: rgb(22, 100, 173);
+    .service-icon {
         margin-bottom: 10px;
     }
 
+    .section-title {
+        font-size: 24px;
+    }
+
+    .service-heading {
+        font-size: 20px;
+    }
+
     .service-detail p {
-        font-size: 16px;
-        line-height: 1.6;
-        color: #555;
+        font-size: 14px;
     }
+}
 
-    @media (max-width: 768px) {
-        .services-details-section {
-            padding: 15px;
-        }
 
-        .service-heading {
-            font-size: 20px;
-        }
-
-        .service-detail p {
-            font-size: 14px;
-        }
-    }
 </style>
 
 
@@ -439,6 +357,143 @@
         <i class="fas fa-envelope"></i>
     </a>
 </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <!-- About Section -->
+            <div class="footer-column">
+              <img src="/static/LPRlogo.png" style="height:150px;">
+              <p>
+                We are dedicated to helping students create a new life abroad by connecting them with top universities and resources to achieve their dreams.
+              </p>
+            </div>
+      
+            <!-- Quick Links Section -->
+            <div class="footer-column" style="margin-top: 50px;">
+              <h3>Quick Links</h3>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Back-To-Top</a></li>
+              </ul>
+            </div>
+      
+            <!-- Contact Section -->
+            <div class="footer-column"  style="margin-top: 50px;">
+              <h3>Contact Us</h3>
+              <ul>
+                <li><strong>Email:</strong>info@lifeplanneruniversal.com</li>
+                <li><strong>Phone:</strong> +91 9072222911<br>+91 9072222933</li>
+                <li><strong>Address:</strong>pathadipalam,Edapally,Kochi </li>
+              </ul>
+            </div>
+      
+            <!-- Social Media Section -->
+            <div class="footer-column"  style="margin-top: 50px;">
+              <h3>Follow Us</h3>
+              <div class="social-icons">
+                <a href="#" style="margin:5px;"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" style="margin:5px;"><i class="fab fa-twitter"></i></a>
+                <a href="#" style="margin:5px;"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" style="margin:5px;"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2024 Life Planner. All Rights Reserved.</p>
+          </div>
+        </div>
+      </footer>
+      
+      <!-- Footer Styles -->
+      <style>
+      .footer {
+        background:rgb(5, 46, 83);
+             
+        color: white;
+        padding: 40px 0;
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+      
+      .footer h3 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+      
+      .footer p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-top: 20px;
+      }
+      
+      .footer-column {
+        margin-bottom: 30px;
+      }
+      
+      .footer ul {
+        list-style: none;
+        padding: 0;
+      }
+      
+      .footer ul li {
+        margin-bottom: 10px;
+      }
+      
+      .footer ul li a {
+        color: white;
+        text-decoration: none;
+      }
+      
+      .footer ul li a:hover {
+        text-decoration: underline;
+      }
+      
+      /* Social Icons */
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+      
+      .social-icons a {
+        color: white;
+        font-size: 1.5rem;
+      }
+      
+      .social-icons a:hover {
+        color: #00aced;
+      }
+      
+      /* Footer Bottom */
+      .footer-bottom {
+        margin-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        padding-top: 20px;
+        font-size: 0.9rem;
+      }
+      
+      .footer-bottom p {
+        margin: 0;
+      }
+      
+      /* Responsive Design */
+      @media (min-width: 768px) {
+        .row {
+          display: flex;
+          justify-content: space-between;
+        }
+      
+        .footer-column {
+          flex: 1;
+          padding: 0 15px;
+        }
+      }
+      </style>
  <!-- Include Font Awesome for Social Media Icons -->
  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   
