@@ -9,10 +9,13 @@ class Appointment(models.Model):
     message=models.TextField(max_length=500,null=True,blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+          return self.firstname
+
 
 class Webinar(models.Model):
     name = models.CharField(max_length=100)
-    email = models.EmailField()
+    mail = models.EmailField()
     created_at = models.DateTimeField(auto_now_add=True)
 
 

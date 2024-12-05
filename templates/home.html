@@ -436,13 +436,15 @@
             </div>
         </div>
     </div>
-    <div class="modal1" id="popupModal">
+    <div class="modal1" id="popupModal1">
         <div class="modal-content1">
           <span class="close-btn1" id="closeModal">&times;</span>
           <img src="/static/webinar.jpg" alt="Ad Poster" class="modal-poster1">
-          <form id="enrollForm1">
-            <input type="text" placeholder="Your Name" required style="border-radius: 30px;">
-            <input type="email" placeholder="Your Email" required style="border-radius: 30px;">
+          <form id="enrollForm1" method="post">
+            {% csrf_token %}
+            <input type="text" placeholder="Your Name" required style="border-radius: 30px;" name="name">
+            <input type="email" placeholder="Your Email" required style="border-radius: 30px;" name="mail">
+            {{ Webinar_form.as_p }}
             <button type="submit" class="enroll-btn">Enroll Now</button>
           </form>
         </div>
@@ -1949,7 +1951,7 @@ showTestimonial(currentIndex);
                         <input placeholder="" type="Message" class="input" name="message">
                         <span>Message</span>
                     </label>
-                    {{ form_as.p }}
+                    {{ appointment_form_as.p }}
                     <button type="submit" class="submit" data-bs-dismiss="modal" style="background-color: grey;" disabled>Submit</button>
                 </form>
             </div>
