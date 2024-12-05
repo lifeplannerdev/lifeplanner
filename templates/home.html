@@ -210,7 +210,7 @@
         /* Popup content */
         .popup-content {
             position: absolute;
-            background: linear-gradient(135deg, #80bccd, #9e9ed4);
+            background: linear-gradient(135deg, #80bccd, #7474b1);
             width: 350px;
             max-width: 90%;
             padding: 30px 20px;
@@ -432,10 +432,125 @@
             
             <div class="overlay w-100 d-flex justify-content-center align-items-center" style="margin-top: -100px;">
                 
-                <button class="button2">Learn More</button>
+                <button class="button2" id="learnMoreBtn">Learn More</button>
             </div>
         </div>
     </div>
+    <div class="modal" id="popupModal">
+        <div class="modal-content">
+          <span class="close-btn" id="closeModal">&times;</span>
+          <img src="/static/webinar.jpg" alt="Ad Poster" class="modal-poster">
+          <form id="enrollForm">
+            <input type="text" placeholder="Your Name" required style="border-radius: 30px;">
+            <input type="email" placeholder="Your Email" required style="border-radius: 30px;">
+            <button type="submit" class="enroll-btn">Enroll Now</button>
+          </form>
+        </div>
+      </div>
+      <style>
+        .button2 {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: linear-gradient(135deg, #9e9ed4, #80bccd);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+.button2:hover {
+  background-color: #0056b3;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Black background with opacity */
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto; /* Center the modal */
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-poster {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.enroll-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: linear-gradient(135deg, #464699, #39badd);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  width:90%;
+  cursor: pointer;
+}
+
+.enroll-btn:hover {
+  
+  background: linear-gradient(135deg, #9e9ed4, #80bccd);
+}
+
+input[type="text"], input[type="email"] {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+      </style>
+      <script>
+        document.getElementById("learnMoreBtn").addEventListener("click", function () {
+  document.getElementById("popupModal").style.display = "block";
+});
+
+document.getElementById("closeModal").addEventListener("click", function () {
+  document.getElementById("popupModal").style.display = "none";
+});
+
+window.addEventListener("click", function (event) {
+  const modal = document.getElementById("popupModal");
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+});
+
+      </script>
     <div class="about-statistics-wrapper" style="margin-top: 80px;">
 
         <!-- About Section -->
@@ -1330,21 +1445,7 @@
         }
         
         /* Enroll Button */
-        .enroll-btn {
-            padding: 12px 25px;
-            font-size: 16px;
-            background-color:rgb(22, 100, 173);
-            color: white;
-            border: none;
-            width:300px;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
         
-        .enroll-btn:hover {
-            background: linear-gradient(135deg, #9e9ed4, #80bccd);
-        }
         
         /* Responsive Design */
         @media (max-width: 768px) {
