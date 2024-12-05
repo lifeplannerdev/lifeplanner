@@ -13,7 +13,6 @@ def home(request):
             return JsonResponse({'success': False, 'error': form.errors.as_json()})
     else:
         form = AppointmentForm()
-        
 
     return render(request, 'home.html', {'form': form})
 
