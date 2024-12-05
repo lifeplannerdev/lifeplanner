@@ -450,10 +450,12 @@
                 {% endif %}
                 
                 <!-- Custom input for Email -->
-                <input type="email" name="mail" placeholder="Your Email" required style="border-radius: 30px;">
-                {% if enrollment_form.mail.errors %}
-                    <div class="error" style="color: red;">{{ enrollment_form.mail.errors.0 }}</div>
-                {% endif %}
+                <input type="text" name="mail" placeholder="Your Email" required style="border-radius: 30px;">
+{% if enrollment_form.mail.errors %}
+    <div class="error" style="color: red;">{{ enrollment_form.mail.errors.0 }}</div>
+{% endif %}
+
+
                 
                 <button type="submit" class="enroll-btn" disabled>Enroll Now</button>
             </form>
