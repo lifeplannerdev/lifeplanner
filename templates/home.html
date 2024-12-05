@@ -442,11 +442,21 @@
           <img src="/static/webinar.jpg" alt="Ad Poster" class="modal-poster1">
           <form id="enrollForm1" method="post">
             {% csrf_token %}
-            <input type="text" name="name" placeholder="Your Name" required style="border-radius: 30px;" >
+            
+            <!-- Custom input for Name -->
+            <input type="text" name="name" placeholder="Your Name" required style="border-radius: 30px;">
+            {% if enrollment_form.name.errors %}
+                <div class="error" style="color: red;">{{ enrollment_form.name.errors.0 }}</div>
+            {% endif %}
+            
+            <!-- Custom input for Email -->
             <input type="email" name="mail" placeholder="Your Email" required style="border-radius: 30px;">
-            {{ webinar_form.as_p }}
+            {% if enrollment_form.mail.errors %}
+                <div class="error" style="color: red;">{{ enrollment_form.mail.errors.0 }}</div>
+            {% endif %}
+            
             <button type="submit" class="enroll-btn">Enroll Now</button>
-          </form>
+        </form>
         </div>
       </div>
       <style>

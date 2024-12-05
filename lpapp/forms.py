@@ -10,4 +10,4 @@ class AppointmentForm(forms.ModelForm):
 class WebinarForm(forms.ModelForm):
     class Meta:
         model = Webinar
-        fields = '__all__'        
+        fields = ['name','mail']        
