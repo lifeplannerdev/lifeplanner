@@ -438,27 +438,145 @@
     </div>
     <div class="modal1" id="popupModal">
         <div class="modal-content1">
-          <span class="close-btn1" id="closeModal">&times;</span>
-          <img src="/static/webinar.jpg" alt="Ad Poster" class="modal-poster1">
-          <form id="enrollForm1" method="post">
-            {% csrf_token %}
-            
-            <!-- Custom input for Name -->
-            <input type="text" name="name" placeholder="Your Name" required style="border-radius: 30px;">
-            {% if enrollment_form.name.errors %}
-                <div class="error" style="color: red;">{{ enrollment_form.name.errors.0 }}</div>
-            {% endif %}
-            
-            <!-- Custom input for Email -->
-            <input type="email" name="mail" placeholder="Your Email" required style="border-radius: 30px;">
-            {% if enrollment_form.mail.errors %}
-                <div class="error" style="color: red;">{{ enrollment_form.mail.errors.0 }}</div>
-            {% endif %}
-            
-            <button type="submit" class="enroll-btn">Enroll Now</button>
-        </form>
+            <span class="close-btn1" id="closeModal">&times;</span>
+            <img src="/static/webinar.jpg" alt="Ad Poster" class="modal-poster1">
+            <form id="enrollForm1" method="post">
+                {% csrf_token %}
+                
+                <!-- Custom input for Name -->
+                <input type="text" name="name" placeholder="Your Name" required style="border-radius: 30px;">
+                {% if enrollment_form.name.errors %}
+                    <div class="error" style="color: red;">{{ enrollment_form.name.errors.0 }}</div>
+                {% endif %}
+                
+                <!-- Custom input for Email -->
+                <input type="email" name="mail" placeholder="Your Email" required style="border-radius: 30px;">
+                {% if enrollment_form.mail.errors %}
+                    <div class="error" style="color: red;">{{ enrollment_form.mail.errors.0 }}</div>
+                {% endif %}
+                
+                <button type="submit" class="enroll-btn" disabled>Enroll Now</button>
+            </form>
         </div>
-      </div>
+    </div>
+    
+    <script>
+        const enrollForm = document.getElementById('enrollForm1');
+        const enrollButton = enrollForm.querySelector('.enroll-btn');
+        const nameInput = enrollForm.querySelector('input[name="name"]');
+        const emailInput = enrollForm.querySelector('input[name="mail"]');
+        const modal = document.getElementById('popupModal');
+        const closeModalBtn = document.getElementById('closeModal');
+    
+        // Function to check if both fields are filled
+        function checkFormCompletion() {
+            if (nameInput.value.trim() && emailInput.value.trim()) {
+                enrollButton.disabled = false;  // Enable button when both fields are filled
+                enrollButton.style.backgroundColor = 'blue';  // Change color to blue
+            } else {
+                enrollButton.disabled = true;  // Disable button if fields are not filled
+                enrollButton.style.backgroundColor = 'grey';  // Change color to grey
+            }
+        }
+    
+        // Attach event listeners to inputs to check form completion on each input change
+        nameInput.addEventListener('input', checkFormCompletion);
+        emailInput.addEventListener('input', checkFormCompletion);
+    
+        // Initial check when the page loads
+        checkFormCompletion();
+    
+        // Submit form event
+        enrollForm.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            enrollButton.disabled = true; // Disable the button during processing
+            
+            const formData = new FormData(enrollForm);
+            fetch("{% url 'lpapp:home' %}", { // Update the URL to your enroll view
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}',
+                },
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: "top",
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.onmouseenter = Swal.stopTimer;
+                            toast.onmouseleave = Swal.resumeTimer;
+                        },
+                    });
+                    Toast.fire({
+                        icon: "success",
+                        title: "Enrolled Successfully",
+                    });
+                    enrollForm.reset(); // Reset the form
+                    checkFormCompletion();  // Recheck form state
+                    modal.style.display = "none";  // Close the modal
+                } else {
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: "top",
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.onmouseenter = Swal.stopTimer;
+                            toast.onmouseleave = Swal.resumeTimer;
+                        },
+                    });
+                    Toast.fire({
+                        icon: "error",
+                        title: "Enrollment Failed",
+                    });
+                }
+            })
+            .catch(error => {
+                console.error("Error during form submission:", error);
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top",
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.onmouseenter = Swal.stopTimer;
+                        toast.onmouseleave = Swal.resumeTimer;
+                    },
+                });
+                Toast.fire({
+                    icon: "error",
+                    title: "Something Went Wrong",
+                });
+            })
+            .finally(() => {
+                enrollButton.disabled = false; // Re-enable the button
+            });
+        });
+    
+        // Close modal when close button is clicked
+        closeModalBtn.addEventListener('click', () => {
+            modal.style.display = "none";
+        });
+    
+        // Optional: Close modal when clicking outside of the modal
+        window.addEventListener('click', function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    </script>
+    
+    
+    
       <style>
         .button2 {
   padding: 10px 20px;
