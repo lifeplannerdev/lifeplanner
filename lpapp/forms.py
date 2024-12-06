@@ -20,4 +20,4 @@ class WebinarForm(forms.ModelForm):
 class TeamForm(forms.ModelForm):
     class Meta:
         model = Team
-        fields = ['name', 'phone', 'img'] 
+        fields = ['name', 'phone', 'img','bio','post'] 
