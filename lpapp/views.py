@@ -2,7 +2,7 @@ from django.http import JsonResponse
 from django.shortcuts import render,redirect
 from .forms import AppointmentForm,WebinarForm  
 from .models import Team
-from .forms import TeamForm
+from .forms import TeamForm,ReviewForm
 from .models import Team, Review
 from django.shortcuts import get_object_or_404
 
@@ -61,8 +61,22 @@ def teamupdate(request):
 def profile(request, pk):
     # Fetch the team member and their reviews
     team_member = get_object_or_404(Team, pk=pk)
-    reviews = Review.objects.filter(team_member=team_member)
-    return render(request,'profile.html', {
+    reviews = Review.objects.filter(team_member=team_member).order_by('-created_at')
+
+    # Handle review form submission
+    if request.method == "POST":
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.team_member = team_member
+            review.save()
+            return redirect('lpapp:profile', pk=pk)  
+
+    else:
+        form = ReviewForm()
+
+    return render(request, 'profile.html', {
         'team_member': team_member,
         'reviews': reviews,
+        'form': form,
     })

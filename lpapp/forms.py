@@ -2,7 +2,12 @@ from django import forms
 from .models import Appointment
 from .models import Webinar
 from .models import Team
-# from .models import Review,Team
+from .models import Review
+
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        fields = ['name', 'review']
 
 
 class AppointmentForm(forms.ModelForm):

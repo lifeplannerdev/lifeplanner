@@ -33,11 +33,12 @@ class Team(models.Model):
         return self.name
 
 
+
 class Review(models.Model):
     team_member = models.ForeignKey(Team, on_delete=models.CASCADE, related_name="reviews")
-    user_name = models.CharField(max_length=100)
-    comment = models.TextField()
+    name = models.CharField(max_length=100)
+    review = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"Review by {self.user_name} for {self.team_member.name}"
+        return f"Review by {self.name} for {self.team_member.name}"
