@@ -1501,7 +1501,7 @@ window.addEventListener("click", function (event) {
                 <div class="profile-card">
                     <img src="{{ member.img.url }}" alt="Profile Picture" class="profile-pic">
                     <h3 class="profile-name">{{ member.name }}</h3>
-                    <p class="profile-specialization">Admission Executive</p>
+                    <p class="profile-specialization">{{ member.post }}</p>
                     <a href="{% url 'lpapp:profile' member.pk %}" class="review-button" style="margin-top: 10px;text-decoration:none;">
                         <i class="fa-solid fa-circle-user" style="margin-right: 10px;"></i>Reviews
                     </a>
