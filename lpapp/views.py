@@ -58,19 +58,26 @@ def teamupdate(request):
 
 
 
+
 def profile(request, pk):
-    # Fetch the team member and their reviews
     team_member = get_object_or_404(Team, pk=pk)
     reviews = Review.objects.filter(team_member=team_member).order_by('-created_at')
 
-    # Handle review form submission
     if request.method == "POST":
         form = ReviewForm(request.POST)
         if form.is_valid():
             review = form.save(commit=False)
             review.team_member = team_member
             review.save()
-            return redirect('lpapp:profile', pk=pk)  
+
+            # Check if the request is AJAX
+            if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+                return JsonResponse({"message": "Review submitted successfully!"}, status=200)
+
+            return redirect('lpapp:profile', pk=pk)
+        else:
+            if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+                return JsonResponse({"error": "Invalid form submission."}, status=400)
 
     else:
         form = ReviewForm()
