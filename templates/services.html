@@ -28,7 +28,7 @@
         font-family: myfont;
        }
         .navbar {
-    background: rgb(12, 71, 126); 
+    background: rgba(17, 17, 17, 0.8); 
     padding: 0.5rem;
     display: flex;
     justify-content: space-between;
@@ -159,7 +159,26 @@
             </ul>
         </div>
     </nav>
-    
+    <script>
+      // Navbar background color change on scroll or menu toggle
+function updateNavbarBackground() {
+    const navbar = document.querySelector(".navbar");
+    const menuCheckbox = document.querySelector("#check-icon");
+
+    if (menuCheckbox.checked || window.scrollY > 50) {
+        navbar.style.background = "rgba(0, 0, 0, 0.7)";
+    } else {
+        navbar.style.background = "rgba(17, 17, 17, 0.8)";
+    }
+}
+
+// Attach scroll event listener
+window.addEventListener("scroll", updateNavbarBackground);
+
+// Attach toggle menu listener
+document.querySelector("#check-icon").addEventListener("change", updateNavbarBackground);
+
+    </script>
 
     <section class="services-details-section">
         <h2 class="section-title" style="margin-top: 50px;">OUR SERVICE</h2>
