@@ -268,28 +268,60 @@
       document.querySelector("#check-icon").addEventListener("change", updateNavbarBackground);
       
           </script>
-    <!-- Profile Header -->
-    <div class="profile-header">
-        <img src="{{ team_member.img.url }}" alt="{{ team_member.name }}" class="profile-pic-large">
-        <h2 class="profile-name">{{ team_member.name }}</h2>
-        <p class="profile-phone"> {{ team_member.post }}</p>
+ <!-- Profile Header -->
+<div class="profile-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Profile Section -->
+            <div class="col-md-4 text-center text-md-start">
+                <img src="{{ team_member.img.url }}" alt="{{ team_member.name }}" class="profile-pic-large">
+                <h2 class="profile-name">{{ team_member.name }}</h2>
+                <p class="profile-phone"> {{ team_member.post }}</p>
 
-        <!-- Icons Section -->
-        <div class="contact-icons">
-            <!-- WhatsApp Icon -->
-            <a href="https://wa.me/{{ team_member.phone }}" target="_blank" class="icon-circle whatsapp-icon">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-            <!-- Dialer Icon -->
-            <a href="tel:{{ team_member.phone }}" class="icon-circle phone-icon">
-                <i class="fas fa-phone"></i>
-            </a>
-            <!-- Mail Icon -->
-            <a href="mailto:{{ team_member.email }}" class="icon-circle email-icon">
-                <i class="fas fa-envelope"></i>
-            </a>
+                <!-- Icons Section -->
+                <div class="contact-icons">
+                    <!-- WhatsApp Icon -->
+                    <a href="https://wa.me/{{ team_member.phone }}" target="_blank" class="icon-circle whatsapp-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <!-- Dialer Icon -->
+                    <a href="tel:{{ team_member.phone }}" class="icon-circle phone-icon">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                    <!-- Mail Icon -->
+                    <a href="mailto:{{ team_member.email }}" class="icon-circle email-icon">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bio Section -->
+            <div class="col-md-8 mt-4 mt-md-0" style="border:3px solid rgb(255, 255, 255);border-radius: 30px;padding:20px;">
+                <h3>Bio</h3>
+                <p class="bio-text mt-3 text-white">{{ team_member.bio }}</p>
+            </div>
         </div>
     </div>
+</div>
+
+    <style>
+        /* Bio Section */
+.container h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #5fbfff;
+    
+}
+
+.bio-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+    </style>
+    
 
     <!-- Footer -->
     <div class="footer">
