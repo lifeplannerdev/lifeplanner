@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>{{ team_member.name }} - Reviews</title>
+</head>
+<body>
+    <div class="profile-details">
+        <img src="https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/default-avatar-profile-picture-female-icon.png" alt="{{ team_member.name }}" class="profile-pic-large">
+        <h2>{{ team_member.name }}</h2>
+        <p>Phone: {{ team_member.phone }}</p>
+    </div>
+    
+</body>
+</html>

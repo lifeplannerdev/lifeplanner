@@ -1,6 +1,11 @@
 from django.http import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .forms import AppointmentForm,WebinarForm  
+from .models import Team
+from .forms import TeamForm
+from .models import Team, Review
+from django.shortcuts import get_object_or_404
+
 
 def home(request):
     if request.method == 'POST':
@@ -26,13 +31,38 @@ def home(request):
     else:
         appointment_form = AppointmentForm()
         enrollment_form = WebinarForm()
+        team_members = Team.objects.all()  # Fetch all team members
     
     return render(request, 'home.html', {
         'form': appointment_form,
         'enrollment_form': enrollment_form,
+        'team_members': team_members,  # Pass the team members to the template
     })
+
 
 
 
 def service(request):
     return render(request,"services.html")
+
+
+def teamupdate(request):
+    if request.method == 'POST':
+        form = TeamForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('lpapp:home')  # Redirect to a page listing all team members
+    else:
+        form = TeamForm()
+    return render(request, 'teamupdate.html', {'form': form})
+
+
+
+def profile(request, pk):
+    # Fetch the team member and their reviews
+    team_member = get_object_or_404(Team, pk=pk)
+    reviews = Review.objects.filter(team_member=team_member)
+    return render(request,'profile.html', {
+        'team_member': team_member,
+        'reviews': reviews,
+    })

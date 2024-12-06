@@ -427,6 +427,240 @@
 
         
      </style>
+     <!-- <div class="container-fluid p-0">
+        <div class="hero-section d-flex align-items-end justify-content-center">
+            <div class="overlay w-100 d-flex justify-content-center align-items-center" style="margin-top: -100px;">
+                <button class="button2" id="learnMoreBtn">Learn More</button>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="modal1" id="popupModal">
+        <div class="modal-content1">
+            <span class="close-btn1" id="closeModal">&times;</span>
+            <img src="/static/webinar.jpg" alt="Ad Poster" class="modal-poster1">
+            <form id="enrollForm1" method="post">
+                {% csrf_token %}
+                <input type="text" name="name" placeholder="Your Name" required style="border-radius: 30px;">
+                {% if enrollment_form.name.errors %}
+                    <div class="error" style="color: red;">{{ enrollment_form.name.errors.0 }}</div>
+                {% endif %}
+                <input type="text" name="mail" placeholder="Your Email" required style="border-radius: 30px;">
+                {% if enrollment_form.mail.errors %}
+                    <div class="error" style="color: red;">{{ enrollment_form.mail.errors.0 }}</div>
+                {% endif %}
+                <button type="submit" class="enroll-btn" disabled>Enroll Now</button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        const enrollForm = document.getElementById('enrollForm1');
+        const enrollButton = enrollForm.querySelector('.enroll-btn');
+        const nameInput = enrollForm.querySelector('input[name="name"]');
+        const emailInput = enrollForm.querySelector('input[name="mail"]');
+        const modal = document.getElementById('popupModal');
+        const closeModalBtn = document.getElementById('closeModal');
+    
+        // Function to check if both fields are filled
+        function checkFormCompletion() {
+            if (nameInput.value.trim() && emailInput.value.trim()) {
+                enrollButton.disabled = false;  // Enable button when both fields are filled
+                enrollButton.style.backgroundColor = 'blue';  // Change color to blue
+            } else {
+                enrollButton.disabled = true;  // Disable button if fields are not filled
+                enrollButton.style.backgroundColor = 'grey';  // Change color to grey
+            }
+        }
+    
+        // Attach event listeners to inputs to check form completion on each input change
+        nameInput.addEventListener('input', checkFormCompletion);
+        emailInput.addEventListener('input', checkFormCompletion);
+    
+        // Initial check when the page loads
+        checkFormCompletion();
+    
+        // Submit form event
+        enrollForm.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission
+            enrollButton.disabled = true; // Disable the button during processing
+    
+            const formData = new FormData(enrollForm);
+            fetch("{% url 'lpapp:home' %}", { // Update the URL to your enroll view
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}',
+                },
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: "top",
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.onmouseenter = Swal.stopTimer;
+                            toast.onmouseleave = Swal.resumeTimer;
+                        },
+                    });
+                    Toast.fire({
+                        icon: "success",
+                        title: "Enrolled Successfully",
+                    });
+                    enrollForm.reset(); // Reset the form
+                    checkFormCompletion();  // Recheck form state
+                    modal.style.display = "none";  // Close the modal
+                } else {
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: "top",
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.onmouseenter = Swal.stopTimer;
+                            toast.onmouseleave = Swal.resumeTimer;
+                        },
+                    });
+                    Toast.fire({
+                        icon: "error",
+                        title: "Enrollment Failed",
+                    });
+                }
+            })
+            .catch(error => {
+                console.error("Error during form submission:", error);
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top",
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.onmouseenter = Swal.stopTimer;
+                        toast.onmouseleave = Swal.resumeTimer;
+                    },
+                });
+                Toast.fire({
+                    icon: "error",
+                    title: "Something Went Wrong",
+                });
+            })
+            .finally(() => {
+                enrollButton.disabled = false; // Re-enable the button
+            });
+        });
+    
+        // Check if the modal has been shown in the last 5 minutes
+        const modalShownTime = localStorage.getItem('modalShownTime');
+        const currentTime = new Date().getTime();
+        const timeDiff = currentTime - modalShownTime;
+    
+        // Show the modal only if it hasn't been shown in the last 5 minutes
+        if (!modalShownTime || timeDiff > 5 * 60 * 1000) {
+            // Show the modal after 2 seconds when the page loads
+            window.onload = function() {
+                setTimeout(function() {
+                    modal.style.display = "block"; // Show the modal after 2 seconds
+                }, 2000);
+            };
+        }
+    
+        // Close modal when close button is clicked
+        closeModalBtn.addEventListener('click', () => {
+            modal.style.display = "none";
+            // Store the time when the modal is closed
+            localStorage.setItem('modalShownTime', new Date().getTime());
+        });
+    
+        // Optional: Close modal when clicking outside of the modal
+        window.addEventListener('click', function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+                // Store the time when the modal is closed
+                localStorage.setItem('modalShownTime', new Date().getTime());
+            }
+        });
+    </script>
+    
+    <style>
+        .modal1 {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Black background with opacity */
+        }
+    
+        .modal-content1 {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.3s ease-in-out;
+        }
+    
+        .modal-poster1 {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+    
+        .close-btn1 {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    
+        .enroll-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background: linear-gradient(135deg, #464699, #39badd);
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            width: 90%;
+            cursor: pointer;
+        }
+    
+        .enroll-btn:hover {
+            background: linear-gradient(135deg, #9e9ed4, #80bccd);
+        }
+    
+        input[type="text"] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style> -->
+    
     <div class="container-fluid p-0">
         <div class="hero-section d-flex align-items-end justify-content-center">
             
@@ -602,6 +836,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7); /* Black background with opacity */
+  z-index:1000px;
 }
 
 .modal-content1 {
@@ -1258,38 +1493,21 @@ window.addEventListener("click", function (event) {
             </div>
         </section>
         
-    <div class="profile-cards-wrapper">
-        <h2 class="profile-heading">OUR TEAM</h2>
-        <div class="profile-cards-container">
-            <!-- Profile Card -->
-            <div class="profile-card">
-                <img src="/static/anshwara.jpg" alt="Profile Picture" class="profile-pic">
-                <h3 class="profile-name">Anashwara V</h3>
-                <p class="profile-specialization">Admission Executive</p>
-                <button class="review-button"><i class="fa-solid fa-circle-user" style="margin-right: 10px;"></i>Reviews</button>
-            </div>
-            <!-- Repeat for other profiles -->
-            <div class="profile-card">
-                <img src="/static/ketziya.jpg" alt="Profile Picture" class="profile-pic">
-                <h3 class="profile-name">Ketzia Salu</h3>
-                <p class="profile-specialization">Admission Executive</p>
-                <button class="review-button"><i class="fa-solid fa-circle-user" style="margin-right: 10px;"></i>Reviews</button>
-            </div>
-            
-            <div class="profile-card">
-                <img src="/static/Ardra.jpg" alt="Profile Picture" class="profile-pic">
-                <h3 class="profile-name">Ardra Unnikrishnan</h3>
-                <p class="profile-specialization">Admission Manager</p>
-                <button class="review-button"><i class="fa-solid fa-circle-user" style="margin-right: 10px;"></i>Reviews</button>
-            </div>
-            <div class="profile-card">
-                <img src="/static/Sreedevi.png" alt="Profile Picture" class="profile-pic">
-                <h3 class="profile-name">Sree Devi N.R</h3>
-                <p class="profile-specialization">Admission Executive</p>
-                <button class="review-button"><i class="fa-solid fa-circle-user" style="margin-right: 10px;"></i>Reviews</button>
+        <div class="profile-cards-wrapper">
+            <h2 class="profile-heading">OUR TEAM</h2>
+            <div class="profile-cards-container">
+                {% for member in team_members %}
+                <div class="profile-card">
+                    <img src="{{ member.img.url }}" alt="Profile Picture" class="profile-pic">
+                    <h3 class="profile-name">{{ member.name }}</h3>
+                    <!-- <p class="profile-specialization">Phone: {{ member.phone }}</p> -->
+                    <a href="{% url 'lpapp:profile' member.pk %}" class="review-button" style="margin-top: 10px;">
+                        <i class="fa-solid fa-circle-user" style="margin-right: 10px;"></i>Reviews
+                    </a>
+                </div>
+                {% endfor %}
             </div>
         </div>
-    </div>
     <!-- services -->
 
     <style>
