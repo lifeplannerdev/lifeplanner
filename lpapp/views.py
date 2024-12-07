@@ -45,6 +45,9 @@ def home(request):
 def service(request):
     return render(request,"services.html")
 
+def blog(request):
+    return render(request,"blog.html")
+
 
 def teamupdate(request):
     if request.method == 'POST':
