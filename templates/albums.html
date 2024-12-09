@@ -78,6 +78,19 @@
         @import 'https://unpkg.com/open-props@1.7.0/open-props.min.css' layer(design.system);
         @import 'https://unpkg.com/open-props@1.7.0/normalize.dark.min.css' layer(design.normalize);
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200..900&family=Lobster&display=swap');
+        body {
+    background-color: #ffffff; /* White background */
+    color: #000000; /* Default text color for better contrast */
+}
+
+main {
+    background-color: #ffffff; /* Ensures the main container is also white */
+    padding: 20px; /* Optional: Adds some spacing around the content */
+    border-radius: 8px; /* Optional: Rounded corners for a polished look */
+    
+}
+
+
         .green-glow {
     color: transparent;
     background: linear-gradient(to right, #4caf50 20%, #8bc34a 40%, #4caf50 60%, #8bc34a 80%);
@@ -128,16 +141,17 @@
                 display: flex;
                 justify-content: center;
                 padding-block: var(--gap);
-                background-color: var(--surface-1);
+                background-color: white;
                 position: sticky;
                 inset-block-start: 0;
                 z-index: var(--layer-1);
 
                 & h1 {
-                    font-family: myfont;
-
-                    font-weight: var(--font-weight-1);
-                    font-size: clamp(1.5rem, 6vw, 3rem);
+                    font-size: 28px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #5f9cad, #8080bc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
                 }
             }
         }
