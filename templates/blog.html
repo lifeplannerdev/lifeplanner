@@ -320,12 +320,65 @@
         <!-- <h1>Our Blog</h1> -->
     </div>
 
+    <!-- Blog Content -->
+    <div class="container my-5">
+        <div class="row">
+            <!-- Blog Card -->
+            <div class="col-md-4 mb-4">
+                <div class="blog-card">
+                    <img src="/static/ger.jpg" alt="Blog 1">
+                    <div class="card-body">
+                        <h5 class="card-title">DUAL VOCATIONAL TRAINING IN GERMANY</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel urna non lacus bibendum tincidunt.</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Blog Cards -->
+            <div class="col-md-4 mb-4">
+                <div class="blog-card">
+                    <img src="/static/doc.jpg" alt="Blog 2">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Jun
+                            07
+                            Study Integrated Master Degree in MEDICINE</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel urna non lacus bibendum tincidunt.</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="blog-card">
+                    <img src="https://images.pexels.com/photos/21627/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Blog 3">
+                    <div class="card-body">
+                        <h5 class="card-title">MAY become GERMAN”</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel urna non lacus bibendum tincidunt.</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .expert {
+    font-size: 32px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #5f9cad, #8080bc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+}
+    </style>
+    
     <div class="carousel" data-flickity='{ "autoPlay": true, "prevNextButtons": false }' style="background:transparent;background-size:200px;">
         <div class="carousel-cell" style="background-image: url(/static/office1.jpg)"></div>
         <div class="carousel-cell" style="background-image: url(/static/office2.jpg)"></div>
         <div class="carousel-cell" style="background-image: url(/static/office3.jpg)"></div>
         <div class="carousel-cell" style="background-image: url(/static/office4.jpg); position: relative;">
-            <button class="carousel-btn">Gallery<i class="fa-solid fa-arrow-right-to-bracket" style="margin-left: 8px;"></i></button>
+            <a href="{% url 'lpapp:albums' %}"><button class="carousel-btn">Gallery<i class="fa-solid fa-arrow-right-to-bracket" style="margin-left: 8px;"></i></button></a>
         </div>
     </div>
     
@@ -395,58 +448,6 @@
             color: #ffffff;
         }
     }
-    </style>
-    <!-- Blog Content -->
-    <div class="container my-5">
-        <div class="row">
-            <!-- Blog Card -->
-            <div class="col-md-4 mb-4">
-                <div class="blog-card">
-                    <img src="/static/ger.jpg" alt="Blog 1">
-                    <div class="card-body">
-                        <h5 class="card-title">DUAL VOCATIONAL TRAINING IN GERMANY</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel urna non lacus bibendum tincidunt.</p>
-                        <a href="#" class="btn btn-primary">Read More</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Additional Blog Cards -->
-            <div class="col-md-4 mb-4">
-                <div class="blog-card">
-                    <img src="/static/doc.jpg" alt="Blog 2">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            Jun
-                            07
-                            Study Integrated Master Degree in MEDICINE</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel urna non lacus bibendum tincidunt.</p>
-                        <a href="#" class="btn btn-primary">Read More</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 mb-4">
-                <div class="blog-card">
-                    <img src="https://images.pexels.com/photos/21627/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Blog 3">
-                    <div class="card-body">
-                        <h5 class="card-title">MAY become GERMAN”</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel urna non lacus bibendum tincidunt.</p>
-                        <a href="#" class="btn btn-primary">Read More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <style>
-        .expert {
-    font-size: 32px;
-    font-weight: bold;
-    background: linear-gradient(135deg, #5f9cad, #8080bc);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    
-}
     </style>
     <div class="container my-5">
         <h2 class="text-center mb-5 expert" >Experts Speak</h2>
