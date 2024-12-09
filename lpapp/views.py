@@ -49,6 +49,8 @@ def blog(request):
     return render(request,"blog.html")
 
 
+
+
 def teamupdate(request):
     if request.method == 'POST':
         form = TeamForm(request.POST, request.FILES)
@@ -90,3 +92,7 @@ def profile(request, pk):
         'reviews': reviews,
         'form': form,
     })
+
+
+def albums(request):
+    return render(request,"albums.html")
