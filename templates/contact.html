@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Lifeplanner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.3.0/flickity.min.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @font-face {
@@ -191,11 +193,100 @@ form span a:hover {
     </style>
 </head>
 <body>
-    <div class="conatiner" style="display:flex;justify-content: center;align-items: center;border-radius: 30px;margin-top: 40px;">
+    <!-- <div class="conatiner" style="display:flex;justify-content: center;align-items: center;border-radius: 30px;margin-top: 40px;">
     <img src="https://artnouveau.in/img/projects/life%20planner/LIFE%20PLANNER%20(2).jpg"
     style="width:70%;border-radius: 30px;"
     >
+</div> -->
+
+<div class="carousel" data-flickity='{ "autoPlay": true, "prevNextButtons": false, "wrapAround": true }' style="background:transparent;background-size:200px;">
+    <!-- Carousel Cell 1 -->
+    <div class="carousel-cell" style="background-image: url(https://i.pinimg.com/736x/a5/e1/c3/a5e1c31c327694f86c8a1f33fc3ff732.jpg); position: relative;">
+      
+    </div>
+
+    <!-- Carousel Cell 2 -->
+    <div class="carousel-cell" style="background-image: url(https://i.pinimg.com/736x/04/0c/21/040c21fbe14145b509932d2ff3e31581.jpg); position: relative;">
+        
+    </div>
+
+    <!-- Carousel Cell 3 -->
+    <div class="carousel-cell" style="background-image: url(https://i.pinimg.com/736x/59/b7/1f/59b71fd01e97e13f84660bc3bcc66a8b.jpg); position: relative;">
+        
+    </div>
+
+    <!-- Carousel Cell 4 -->
+    <div class="carousel-cell" style="background-image: url(https://i.pinimg.com/736x/ac/72/ef/ac72ef89b93b9db84b93962373f4f0d8.jpg); position: relative;">
+        
+    </div>
 </div>
+
+<style>
+/* Carousel Styling */
+.carousel {
+    margin-top: 30px;
+    z-index: 10;
+}
+
+.carousel-cell {
+    width: 35%;
+    height: 400px;
+    margin-right: 10px;
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Overlay for Text */
+.carousel-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    border-radius: 0 0 15px 15px;
+}
+
+.carousel-info h4 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.carousel-info p {
+    margin: 5px 0 0;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .carousel {
+        margin-top: 20px;
+        margin-bottom: 70px;
+    }
+
+    .carousel-cell {
+        width: 60%;
+        height: 250px;
+        margin-right: 10px;
+        margin-top: 10px;
+    }
+
+    .carousel-info h4 {
+        font-size: 1.2rem;
+    }
+
+    .carousel-info p {
+        font-size: 0.9rem;
+    }
+}
+</style>
 
     <div class="container">
         
@@ -393,5 +484,7 @@ form span a:hover {
     }
   }
   </style>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.3.0/flickity.pkgd.min.js"></script>
+
 </body>
 </html>
