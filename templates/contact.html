@@ -85,8 +85,8 @@
 
         .contact-form input,
         .contact-form textarea {
-            width: 90%;
-            padding: 15px;
+            width: 85%;
+            padding: 15px 25px;
             margin-bottom: 20px;
             border: 1px solid #ccc;
             border-radius: 8px;
@@ -101,21 +101,7 @@
             outline: none;
         }
 
-        .contact-form button {
-            padding: 15px 25px;
-            background-color: #17498c;
-            color: white;
-            border: none;
-            border-radius: 30px;
-            font-size: 1.1em;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            width:97%;
-        }
-
-        .contact-form button:hover {
-            background-color: #0e3464;
-        }
+        
 
         .map-section {
             margin-top: 40px;
@@ -140,7 +126,84 @@
             .contact-form {
                 flex: 1 1 100%;
             }
+        
         }
+
+        /* Contact Form Styling */
+.contact-form {
+    max-width: 450px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.header p {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    color: #706b6b;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form input, form textarea {
+    height: 40px;
+    outline: none;
+    border: 1px solid #cccccc;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 8px;
+}
+
+form textarea {
+    height: auto;
+    padding: 10px;
+    font-size: 15px;
+}
+
+form input[type="submit"] {
+    background-color: rgba(17, 17, 226, 0.562);
+    color: #ffffff;
+    font-size: 17px;
+    cursor: pointer;
+    width:97%;
+}
+
+form input[type="submit"]:hover {
+    background-color: rgba(17, 17, 226, 0.8);
+}
+
+form span {
+    text-align: center;
+    font-size: 16px;
+    padding-top: 10px;
+    color: #706b6b;
+}
+
+form span a {
+    text-decoration: none;
+    color: rgba(36, 36, 207, 0.671);
+    font-weight: 500;
+}
+
+form span a:hover {
+    text-decoration: underline;
+}
+
+        
     </style>
 </head>
 <body>
@@ -173,25 +236,23 @@
             </div>
 
             <!-- Contact Form -->
-            <div class="contact-form">
-                <h3>Send Us a Message</h3>
-                <form>
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            <!-- Contact Form -->
+<div class="contact-form">
+    <div class="header">
+        <span>Send Us a Message</span>
+        <p>Get in touch with us today!</p>
+    </div>
+    <form action="#">
+        <input type="text" id="name" name="name" placeholder="Enter your name" required />
+        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+        <input type="text" id="subject" name="subject" placeholder="Enter subject" required />
+        <textarea id="message" name="message" placeholder="Type your message here..." rows="5" required></textarea>
+        <input type="submit" value="Send" />
+    </form>
+    
+</div>
+</div>
 
-                    <label for="email">Your Email</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
-
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" name="subject" placeholder="Enter subject" required>
-
-                    <label for="message">Your Message</label>
-                    <textarea id="message" name="message" placeholder="Type your message here..." rows="5" required></textarea>
-
-                    <button type="submit">Send</button>
-                </form>
-            </div>
-        </div>
 
         <!-- Map Section -->
         <div class="map-section">
