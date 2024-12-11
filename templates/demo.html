@@ -1,776 +1,592 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">  
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.3.0/flickity.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Comfortaa:wght@300..700&family=Dosis:wght@200..800&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-    <title>{{ team_member.name }} - Profile</title>
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400");
-
-*,
-*::before,
-*::after {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-/* ================= VARIABLE ================ */
-:root {
-  --primary-color: hsl(9, 94%, 61%);
-  --primary-color-alt: hsl(28, 72%, 83%);
-  --second-color: #3e537c;
-  --second-color-alt: hsla(220, 33%, 36%, 65%);
-  --third-color: hsl(220, 36%, 28%);
-  --white-color: #fbfbfb;
-  --white-color-alt: hsl(12, 14%, 93%);
-  --dark-color: hsl(300, 100%, 0%);
-}
-
-/* ================= BASE ==================== */
-li {
-  list-style: none;
-}
-a {
-  text-decoration: none;
-}
-img {
-  width: 100%;
-  height: auto;
-}
-.bx {
-  font-size: 2.5rem;
-}
-.container {
-  padding: 0 2rem;
-}
-
-/* -- BODY -- */
-body {
-  font-family: "Raleway", sans-serif;
-  font-size: 1rem;
-  background-color: var(--white-color);
-}
-
-/* ================= HEADER ================ */
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--dark-color);
-  padding: 1rem 2rem;
-}
-.company-logo {
-  font-size: 2.5rem;
-  background: -webkit-linear-gradient(
-    120deg,
-    var(--primary-color-alt),
-    var(--primary-color)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.nav-items {
-  display: flex;
-}
-.nav-item {
-  margin: 0 2rem;
-}
-.nav-link {
-  font-size: 1.1rem;
-  letter-spacing: 0.05rem;
-  position: relative;
-  background: -webkit-linear-gradient(
-    var(--primary-color-alt),
-    var(--primary-color)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.nav-link::before {
-  content: "";
-  background: linear-gradient(var(--primary-color), var(--primary-color-alt));
-  width: 100%;
-  height: 0.05rem;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 150ms;
-}
-.nav-link:hover::before {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-.menu-toggle {
-  display: none;
-}
-.bx-menu,
-.bx-x {
-  cursor: pointer;
-  background: -webkit-linear-gradient(
-    120deg,
-    var(--primary-color-alt),
-    var(--primary-color)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: none !important;
-}
-
-/* ================= MAIN ================ */
-
-/* -------- HOME SECTION -------------- */
-.section-1 {
-  background-color: var(--dark-color);
-  display: grid;
-}
-/* .home-computer-container {} */
-
-.slogan .company-title {
-  background: -webkit-linear-gradient(
-    120deg,
-    var(--primary-color-alt),
-    var(--primary-color)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-top: 2rem;
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-.slogan .company-slogan {
-  background: -webkit-linear-gradient(
-    120deg,
-    var(--primary-color-alt),
-    var(--primary-color)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-top: 1rem;
-  font-size: 1.2rem;
-  font-weight: 400;
-  line-height: 1.8rem;
-}
-
-/* -------- OFFER SECTION ------------- */
-.section-2 {
-  margin: 2rem 0;
-}
-.offer {
-  background-color: var(--dark-color);
-  margin: 1rem 0;
-  display: grid;
-}
-.offer img {
-  background-color: var(--dark-color);
-  padding: 2rem 0;
-}
-.offer-1 img {
-  background-color: var(--dark-color);
-  padding: 3rem 0;
-}
-.offer-description {
-  background-color: var(--white-color-alt);
-  padding: 0 1rem;
-}
-.offer-description .offer-title {
-  color: var(--second-color);
-  font-size: 1.8rem;
-  font-weight: 400;
-  padding: 1.5rem 0 0.5rem 0;
-}
-.offer-description .offer-hook {
-  color: var(--second-color-alt);
-  font-size: 1.2rem;
-}
-.offer-description .cart-btn {
-  cursor: pointer;
-  color: var(--second-color-alt);
-  font-size: 1.1rem;
-  display: grid;
-  place-items: center;
-  margin: 2rem 0 1rem 0;
-  width: 10rem;
-  height: 3rem;
-  background-image: linear-gradient(
-    to top,
-    var(--primary-color-alt),
-    var(--primary-color)
-  );
-}
-.offer-description .cart-btn:hover {
-  background-image: linear-gradient(
-    to bottom,
-    var(--primary-color-alt),
-    var(--primary-color)
-  );
-}
-
-/* -------- PRODUCT SECTION ----------- */
-.section-3 {
-  display: grid;
-  place-items: center;
-  justify-content: space-around;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 400px));
-}
-.product {
-  cursor: pointer;
-  background-color: var(--white-color-alt);
-  position: relative;
-}
-.product::before {
-  content: "";
-  background-image: linear-gradient(
-    to bottom,
-    hsla(29, 72%, 83%, 0.438),
-    hsla(9, 94%, 61%, 0.507)
-  );
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-.product_add_cart {
-  color: var(--white-color-alt);
-  font-size: 1.2rem;
-  background-color: hsl(9, 94%, 65%);
-  padding: 1rem 0.4rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: transform 300ms, color 300ms, box-shadow 300ms;
-}
-.product_add_cart:hover {
-  color: var(--white-color);
-  box-shadow: 0 1rem 0 -0.5rem hsl(17, 79%, 65%, 0.7),
-    0 2rem 0 -1rem hsla(17, 79%, 65%, 0.65);
-}
-
-/* -------- SPONSOR SECTION ----------- */
-.section-4 {
-  margin: 4rem 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
-}
-.sponsor img {
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
-  filter: grayscale(100%);
-  opacity: 0.8;
-  transition: opacity 300ms;
-}
-.sponsor img:hover {
-  /* filter: grayscale(0); */
-  opacity: 1;
-}
-
-/* ========= SUBSCRIBE SECTION ========== */
-.section-5 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 2rem 0;
-}
-.subscribe-input-label {
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  font-weight: 400;
-  letter-spacing: 0.05rem;
-  color: var(--second-color);
-}
-input[type="text"] {
-  padding: 0 0.5rem;
-  font-size: 1.1rem;
-  width: 100%;
-  height: 3rem;
-  border: none;
-  background-color: hsl(220, 33%, 90%);
-  color: var(--second-color-alt);
-  transition: background-color 300ms;
-}
-input[type="text"]:focus {
-  outline: none;
-  background-color: hsl(220, 33%, 95%);
-}
-input[type="text"]::placeholder {
-  color: var(--second-color-alt);
-}
-input[type="submit"] {
-  cursor: pointer;
-  background-image: linear-gradient(
-    to top,
-    var(--primary-color-alt),
-    var(--primary-color)
-  );
-  color: var(--white-color-alt);
-  margin: 1rem 0;
-  border: none;
-  width: 100%;
-  height: 3rem;
-  font-size: 1.2rem;
-  transition: color 300ms;
-}
-input[type="submit"]:hover {
-  background-image: linear-gradient(
-    to bottom,
-    var(--primary-color-alt),
-    var(--primary-color)
-  );
-  color: var(--white-color);
-}
-/* =============== FOOTER =============== */
-.top-footer {
-  background-color: var(--second-color);
-  display: flex;
-  flex-direction: column;
-}
-.footer-title {
-  font-weight: 500;
-  font-size: 1.2rem;
-  padding: 1rem 0;
-  background-image: -webkit-linear-gradient(
-    120deg,
-    var(--primary-color-alt),
-    var(--primary-color)
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.footer-items h3 {
-  cursor: pointer;
-  font-weight: 300;
-  font-size: 1.1rem;
-  padding: 0.1rem 0;
-  color: var(--white-color-alt);
-}
-.footer-items h3:hover {
-  text-decoration: underline;
-}
-.footer-items h3:last-child {
-  padding-bottom: 2rem;
-}
-
-.end-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--third-color);
-}
-.copyright {
-  color: var(--white-color-alt);
-  padding: 1rem 0;
-  font-size: 0.9rem;
-}
-.copyright b {
-  font-weight: inherit;
-  font-size: 0.9rem;
-}
-.designer {
-  color: hsla(0, 0%, 98%, 0.541);
-  padding-bottom: 0.5rem;
-  font-size: 0.9rem;
-}
-.designer:hover {
-  text-decoration: underline;
-}
-
-/* =============== MEDIA QUERIES ======= */
-
-@media screen and (max-width: 768px) {
-  .container {
-    padding: 0 1rem;
-  }
-  /* ================= HEADER ================ */
-  header {
-    padding: 0.5rem 1rem;
-  }
-  .navbar {
-    background-color: var(--dark-color);
-    position: absolute;
-    top: 3.5rem;
-    right: 0;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    transform: scaleY(0);
-    transform-origin: bottom;
-    transition: transform 500ms;
-  }
-  .show-navbar {
-    display: flex;
-    transform: scaleY(1);
-    transform-origin: top;
-    transition: transform 300ms;
-  }
-  .nav-items {
-    display: flex;
-    flex-direction: column;
-  }
-  .nav-item {
-    margin: 0.5rem 0;
-  }
-  .menu-toggle {
-    display: block;
-  }
-  .bx-menu {
-    display: block !important;
-  }
-  .show-bx {
-    display: block !important;
-  }
-  .hide-bx {
-    display: none !important;
-  }
-}
-@media (min-width: 769px) {
-  header {
-    padding: 1rem 5rem;
-  }
-  /* ================= MAIN ================ */
-
-  /* -------- HOME SECTION -------------- */
-  .section-1 {
-    justify-content: space-between;
-    grid-template-columns: 1fr 1fr;
-    padding: 10rem 5rem 0 5rem;
-  }
-  .slogan .company-title {
-    max-width: 30rem;
-    font-size: 1.8rem;
-    letter-spacing: 0.5rem;
-  }
-  .slogan .company-slogan {
-    max-width: 20rem;
-    font-size: 1.3rem;
-  }
-  /* -------- OFFER SECTION ------------- */
-  .section-2 {
-    margin: 2rem 5rem;
-  }
-  .offer {
-    margin: 5rem 0;
-    align-items: center;
-    justify-content: space-between;
-    grid-template-rows: auto auto;
-  }
-  .offer-1 {
-    grid-template-areas: "offer-1-img offer-desc-1";
-  }
-  .offer-1 img {
-    background-color: var(--dark-color);
-    padding: 2rem 0;
-  }
-  .offer-2 {
-    grid-template-areas: "offer-desc-2 offer-2-img";
-  }
-  .offer-1-img {
-    grid-area: offer-1-img;
-  }
-  .offer-2-img {
-    grid-area: offer-2-img;
-  }
-  .offer-desc-1 {
-    grid-area: offer-desc-1;
-  }
-  .offer-desc-2 {
-    grid-area: offer-desc-2;
-  }
-  .offer-description .offer-title {
-    font-size: 1.9rem;
-    padding: 1.5rem 0 0.5rem 0;
-  }
-  .offer-description .offer-hook {
-    max-width: 30rem;
-  }
-  .offer-description {
-    background-color: var(--white-color-alt);
-    padding: 2rem 1rem;
-  }
-  .offer-description .offer-title {
-    padding: 0.5rem 0 1rem 0;
-  }
-  .offer-description .cart-btn {
-    margin: 2rem 0 0.5rem 0;
-  }
-  /* -------- PRODUCT SECTION ----------- */
-  .section-3 {
-    gap: 5rem;
-  }
-  .product::before {
-    transform: scaleY(0);
-    transform-origin: bottom;
-    transition: transform 300ms;
-  }
-  .product:hover::before {
-    transform: scaleY(1);
-    transform-origin: top;
-    transition: transform 300ms;
-  }
-  .product_add_cart {
-    transform: scaleY(0);
-    transform-origin: bottom;
-  }
-  .product:hover .product_add_cart {
-    transform: translate(-50%, -50%) scaleY(1);
-    transform-origin: top;
-  }
-  /* -------- SPONSOR SECTION ----------- */
-  .section-4 {
-    margin: 5rem 0;
-  }
-  /* ========= SUBSCRIBE SECTION ========== */
-  .section-5 {
-    padding: 1rem 0;
-  }
-  .section-5 .subscribe-container {
-    display: flex;
-    align-items: center;
-  }
-  input[type="text"] {
-    padding: 0 1rem;
-    width: 15rem;
-  }
-  input[type="submit"] {
-    width: 10rem;
-  }
-  /* =============== FOOTER =============== */
-  .top-footer {
-    flex-direction: row;
-    justify-content: space-around;
-    padding-bottom: 8rem;
-    padding-top: 2rem;
-  }
-  .footer-title {
-    font-size: 1rem;
-    padding: 1rem 0;
-  }
-  .footer-items h3 {
-    font-size: 0.9rem;
-  }
-
-  .end-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--third-color);
-  }
-  .copyright {
-    color: hsla(0, 0%, 98%, 0.747);
-    padding: 1rem 0;
-    font-size: 0.8rem;
-  }
-  .copyright b {
-    font-size: 0.7rem;
-  }
-  .designer {
-    color: hsla(0, 0%, 98%, 0.322);
-    font-size: 0.8rem;
-  }
-}
-
-    </style>
-</head>
+<title>CAROUSAL</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
 <body>
-  <header>
-    <div class="company-logo">D</div>
-    <nav class="navbar">
-      <ul class="nav-items">
-        <li class="nav-item"><a href="#" class="nav-link">HOME</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">OFFER</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">SHOP</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">CONTACT</a></li>
-      </ul>
-    </nav>
-    <div class="menu-toggle">
-      <i class="bx bx-menu"></i>
-      <i class="bx bx-x"></i>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="#band" class="w3-bar-item w3-button w3-padding-large w3-hide-small">REGISTRATION</a>
+    <a href="#tour" class="w3-bar-item w3-button w3-padding-large w3-hide-small">TEAM</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">SPONSORS</a>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="#" class="w3-bar-item w3-button">Associate With Us</a>
+        <a href="#" class="w3-bar-item w3-button">Why This Event?</a>
+      </div>
     </div>
-  </header>
-  <main>
-    <!-- HOME SECTION -->
-    <section class="container section-1">
-      <div class="slogan">
-        <h1 class="company-title">DOWNTOWN TECH LIVER</h1>
-        <h2 class="company-slogan">
-          The biggest computer shop in the area where customers come first.
-        </h2>
-      </div>
-      <div class="home-computer-container">
-        <img class="home-computer" src="https://github.com/r-e-d-ant/Computer-store-website/blob/main/assets/images/home_img.png?raw=true" alt="a computer in dark with shadow" class="home-img">
-      </div>
-    </section>
+    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+  </div>
+</div>
 
-    <!-- OFFER SECTION -->
-    <section class="container section-2">
-      <!-- offer 1 -->
-      <div class="offer offer-1">
-        <img src="https://github.com/r-e-d-ant/Computer-store-website/blob/main/assets/images/offer_1.png?raw=true" alt="a computer in dark with with white shadow" class="offer-img offer-1-img">
-        <div class="offer-description offer-desc-1">
-          <h2 class="offer-title">Macbook pro</h2>
-          <p class="offer-hook">This a Macbook pro nulla vulputate magna vel odio sagittis bibendium...</p>
-          <div class="cart-btn">ADD TO CART</div>
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+  <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">REGISTRATION</a>
+  <a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">TEAM</a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">SPONSORS</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Associate With Us</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Why This Event?</a>
+</div>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+  <!-- Automatic Slideshow Images -->
+  <div class="mySlides w3-display-container w3-center">
+    <img src="https://www.w3schools.com/w3images/la.jpg" style="width:100%">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h3>CAROUSAL</h3>
+      <p><b>We will have the best war!</b></p>   
+    </div>
+  </div>
+  <div class="mySlides w3-display-container w3-center">
+    <img src="https://www.w3schools.com/w3images/ny.jpg" style="width:100%">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h3>REGISTER NOW!</h3>
+      <p><b>Come with us what are you waiting for?</b></p>    
+    </div>
+  </div>
+  <div class="mySlides w3-display-container w3-center">
+    <img src="https://www.w3schools.com/w3images/chicago.jpg" style="width:100%">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h3>FUN</h3>
+      <p><b>This will be fun believe me!!!</b></p>    
+    </div>
+  </div>
+
+  <!-- The Tour Section -->
+  <div class="w3-black" id="tour">
+    <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+      <h2 class="w3-wide w3-center">REGISTRATIONS</h2>
+      <p class="w3-opacity w3-center"><i>Remember to register yourself for the following events!</i></p><br>
+
+      <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+        <div class="w3-third w3-margin-bottom">
+          <img src="https://www.w3schools.com/w3images/newyork.jpg" alt="New York" style="width:100%" class="w3-hover-opacity">
+          <div class="w3-container w3-white">
+            <p><b>Boom Boom</b></p>
+            <p class="w3-opacity">Fri 27 Nov 2016</p>
+            <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
+          </div>
         </div>
-      </div>
-      <!-- offer 2 -->
-      <div class="offer offer-2">
-        <img src="https://github.com/r-e-d-ant/Computer-store-website/blob/main/assets/images/offer_2.png?raw=true" alt="a opened computer" class="offer-img offer-2-img">
-        <div class="offer-description offer-desc-2">
-          <h2 class="offer-title">Lenovo</h2>
-          <p class="offer-hook">This a Lenovo nulla vulputate magna vel odio sagittis bibendium...</p>
-          <div class="cart-btn">ADD TO CART</div>
+        <div class="w3-third w3-margin-bottom">
+          <img src="https://www.w3schools.com/w3images/paris.jpg" alt="Paris" style="width:100%" class="w3-hover-opacity">
+          <div class="w3-container w3-white">
+            <p><b>Battle</b></p>
+            <p class="w3-opacity">Sat 28 Nov 2016</p>
+            <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
+          </div>
         </div>
-      </div>
-    </section>
-
-    <!-- PRODUCT SECTION -->
-    <section class="container section-3">
-      <!-- product - 1 -->
-      <div class="product product-1">
-        <img src="https://github.com/r-e-d-ant/Computer-store-website/blob/main/assets/images/comp_1.png?raw=true" alt="computer to sell" class="product-img">
-        <span class="product_add_cart">ADD TO CART</span>
-      </div>
-      <!-- product - 2 -->
-      <div class="product product-2">
-        <img src="https://github.com/r-e-d-ant/Computer-store-website/blob/main/assets/images/comp_2.png?raw=true" alt="computer to sell" class="product-img">
-        <span class="product_add_cart">ADD TO CART</span>
-      </div>
-      <!-- product - 3 -->
-      <div class="product product-3">
-        <img src="https://github.com/r-e-d-ant/Computer-store-website/blob/main/assets/images/comp_3.png?raw=true" alt="computer to sell" class="product-img">
-        <span class="product_add_cart">ADD TO CART</span>
-      </div>
-      <!-- product - 4 -->
-      <div class="product product-4">
-        <img src="https://github.com/r-e-d-ant/Computer-store-website/blob/main/assets/images/comp_4.png?raw=true" alt="computer to sell" class="product-img">
-        <span class="product_add_cart">ADD TO CART</span>
-      </div>
-    </section>
-
-    <!-- SPONSOR SECTION -->
-    <section class="container section-4">
-      <!-- SPONSOR group 1 -->
-      <div class="sponsor sponsor-1"><img src="https://raw.githubusercontent.com/r-e-d-ant/Computer-store-website/b90ac65459206fef22e9b87313f587185554263b/assets/images/microsoft.svg" alt=""></div>
-      <div class="sponsor sponsor-2"><img src="https://raw.githubusercontent.com/r-e-d-ant/Computer-store-website/b90ac65459206fef22e9b87313f587185554263b/assets/images/apple.svg" alt=""></div>
-
-      <!-- SPONSOR group 2 -->
-      <div class="sponsor sponsor-3"><img src="https://raw.githubusercontent.com/r-e-d-ant/Computer-store-website/b90ac65459206fef22e9b87313f587185554263b/assets/images/dell.svg" alt=""></div>
-      <div class="sponsor sponsor-4"><img src="https://raw.githubusercontent.com/r-e-d-ant/Computer-store-website/b90ac65459206fef22e9b87313f587185554263b/assets/images/ibm.svg" alt=""></div>
-    </section>
-
-    <!-- SUBSCRIBE SECTION-->
-    <section class="container section-5">
-      <h2 class="subscribe-input-label">NEWSLETTER</h2>
-      <div class="subscribe-container">
-        <input type="text" id="email-subscribe" placeholder="Email address...">
-        <input type="submit" value="SUBSCRIBE">
-      </div>
-    </section>
-  </main>
-  <script>
-    
-const menuToggle = document.querySelector('.menu-toggle');
-const bxMenu = document.querySelector('.bx-menu');
-const bxX = document.querySelector('.bx-x');
-
-const navBar = document.querySelector('.navbar');
-
-// --- open menu ---
-
-bxMenu.addEventListener('click', (e)=> {
-    if(e.target.classList.contains('bx-menu')){
-        navBar.classList.add('show-navbar');
-        bxMenu.classList.add('hide-bx');
-        bxX.classList.add('show-bx');
-    }
-})
-
-// --- close menu ---
-
-bxX.addEventListener('click', (e)=> {
-    if(e.target.classList.contains('bx-x')){
-        navBar.classList.remove('show-navbar');
-        bxMenu.classList.remove('hide-bx');
-        bxX.classList.remove('show-bx');
-    }
-})
-
-
-  </script>
-  <footer>
-    <div class="container top-footer">
-      <!-- footer item 1 -->
-      <div class="footer-item">
-        <h2 class="footer-title">ADDRESS</h2>
-        <div class="footer-items">
-          <h3>Adipisicing elit.</h3>
-          <h3>Adipisicing elit.</h3>
-          <h3>Adipisicing st18</h3>
-        </div>
-      </div>
-      <!-- footer item 2 -->
-      <div class="footer-item">
-        <h2 class="footer-title">SERVICES</h2>
-        <div class="footer-items">
-          <h3>Adipisicing elit.</h3>
-          <h3>Adipisicing elit.</h3>
-          <h3>Adipisicing elit.</h3>
-          <h3>Adipisicing elit.</h3>
-          <h3>Adipisicing elit.</h3>
-        </div>
-      </div>
-      <!-- footer item 3 -->
-      <div class="footer-item">
-        <h2 class="footer-title">SUPPLIERS</h2>
-        <div class="footer-items">
-          <h3>Adipisicing elit.</h3>
-          <h3>Adipisicing elit.</h3>
-          <h3>Adipisicing elit.</h3>
-          <h3>Adipisicing elit.</h3>
-          <h3>Adipisicing elit.</h3>
-        </div>
-      </div>
-      <!-- footer item 4 -->
-      <div class="footer-item">
-        <h2 class="footer-title">INVESTMENT</h2>
-        <div class="footer-items">
-          <h3>Adipisicing elit.</h3>
-          <h3>Adipisicing elit.</h3>
-          <h3>Adipisicing elit.</h3>
-          <h3>Adipisicing elit.</h3>
-          <h3>Adipisicing elit.</h3>
+        <div class="w3-third w3-margin-bottom">
+          <img src="https://www.w3schools.com/w3images/sanfran.jpg" alt="San Francisco" style="width:100%" class="w3-hover-opacity">
+          <div class="w3-container w3-white">
+            <p><b>Fight</b></p>
+            <p class="w3-opacity">Sun 29 Nov 2016</p>
+            <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
+          </div>
         </div>
       </div>
     </div>
-    <div class="container end-footer">
-      <div class="copyright">copyright © 2021 - Present • <b>DOWNTOWN TECH LIVER</b></div>
-      <a class="designer" href="#">Thierry M</a>
+  </div>
+
+  <!-- Ticket Modal -->
+  <div id="ticketModal" class="w3-modal">
+    <div class="w3-modal-content w3-animate-top w3-card-4">
+      <header class="w3-container w3-teal w3-center w3-padding-32"> 
+        <span onclick="document.getElementById('ticketModal').style.display='none'" 
+       class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
+        <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Tickets</h2>
+      </header>
+      <div class="w3-container">
+        <p><label><i class="fa fa-shopping-cart"></i> Tickets, $15 per person</label></p>
+        <input class="w3-input w3-border" type="text" placeholder="How many?">
+        <p><label><i class="fa fa-user"></i> Send To</label></p>
+        <input class="w3-input w3-border" type="text" placeholder="Enter email">
+        <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right">PAY <i class="fa fa-check"></i></button>
+        <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal').style.display='none'">Close <i class="fa fa-remove"></i></button>
+        <p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p>
+      </div>
     </div>
-  </footer>
+  </div>
+
+  <!-- The Team Section -->
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+    <h2 class="w3-wide">Our Beautiful Team</h2>
+    <p class="w3-opacity"><i>We love music</i></p>
+    <p class="w3-justify">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+    <div class="w3-row w3-padding-32">
+      <div class="w3-col l3 m6">
+        <p>Name</p>
+        <img src="https://www.w3schools.com/w3images/bandmember.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+      </div>
+      <div class="w3-col l3 m6">
+        <p>Name</p>
+        <img src="https://www.w3schools.com/w3images/bandmember.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+      </div>
+      <div class="w3-col l3 m6">
+        <p>Name</p>
+        <img src="https://www.w3schools.com/w3images/bandmember.jpg" class="w3-round" alt="Random Name" style="width:60%">
+      </div>
+      <div class="w3-col l3 m6">
+        <p>Name</p>
+        <img src="https://www.w3schools.com/w3images/bandmember.jpg" class="w3-round" alt="Random Name" style="width:60%">
+      </div>
+    </div>
+  </div>
+  
+  <!-- Sponsor Section -->
+<div class="w3-container w3-black" style="padding:128px 16px" id="work">
+  <h3 class="w3-center">OUR SPONSORS</h3>
+  <p class="w3-center w3-large">What are people dong for us?</p>
+
+  <div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-col l3 m6">
+      <img src="https://www.w3schools.com/w3images/tech_mic.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A microphone">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="https://www.w3schools.com/w3images/tech_phone.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A phone">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="https://www.w3schools.com/w3images/tech_drone.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A drone">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="https://www.w3schools.com/w3images/tech_sound.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Soundbox">
+    </div>
+  </div>
+
+  <div class="w3-row-padding w3-section">
+    <div class="w3-col l3 m6">
+      <img src="https://www.w3schools.com/w3images/tech_tablet.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A tablet">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="https://www.w3schools.com/w3images/tech_camera.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A camera">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="https://www.w3schools.com/w3images/tech_typewriter.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A typewriter">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="https://www.w3schools.com/w3images/tech_tableturner.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A tableturner">
+    </div>
+  </div>
+</div>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">×</span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
+  
+  <!-- Associate With Us Section -->
+  <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+    <h2 class="w3-wide w3-center">Associate With Us</h2>
+    <p class="w3-opacity w3-center"><i>Why? Drop a note!</i></p>
+    <div class="w3-row w3-padding-32">
+      <div class="w3-col m6 w3-large w3-margin-bottom">
+        <i class="fa fa-map-marker" style="width:30px"></i> Marriner Valley, Mars<br>
+        <i class="fa fa-phone" style="width:30px"></i> Phone: #00 151515<br>
+        <i class="fa fa-envelope" style="width:30px"> </i> Email: mail@marsmail.com<br>
+      </div>
+      <div class="w3-col m6">
+        <form action="/action_page.php" target="_blank">
+          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+            </div>
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+            </div>
+          </div>
+          <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+          <button class="w3-button w3-black w3-section w3-right" type="submit">SEND</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+<!-- Why This Event -->
+  <div  class="w3-black">
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+    <h2 class="w3-wide">Why is this Event Even Happening?</h2>
+    <p class="w3-opacity"><i>I dont know</i></p>
+    <p class="w3-justify">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+    </div>
+  </div>
+  </div>
+  
+<!-- End Page Content -->
+</div>
+
+<!-- Image of location/map -->
+<img src="https://www.w3schools.com/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%">
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+  <i class="fa fa-facebook-official w3-hover-opacity"></i>
+  <i class="fa fa-instagram w3-hover-opacity"></i>
+  <i class="fa fa-snapchat w3-hover-opacity"></i>
+  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+  <i class="fa fa-twitter w3-hover-opacity"></i>
+  <i class="fa fa-linkedin w3-hover-opacity"></i>
+  <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+  <script type="text/javascript">
+  // Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 4000);    
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+  
 </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<title>CAROUSAL</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="#band" class="w3-bar-item w3-button w3-padding-large w3-hide-small">REGISTRATION</a>
+    <a href="#tour" class="w3-bar-item w3-button w3-padding-large w3-hide-small">TEAM</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">SPONSORS</a>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="#" class="w3-bar-item w3-button">Associate With Us</a>
+        <a href="#" class="w3-bar-item w3-button">Why This Event?</a>
+      </div>
+    </div>
+    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+  </div>
+</div>
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+  <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">REGISTRATION</a>
+  <a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">TEAM</a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">SPONSORS</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Associate With Us</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Why This Event?</a>
+</div>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+  <!-- Automatic Slideshow Images -->
+  <div class="mySlides w3-display-container w3-center">
+    <img src="https://www.w3schools.com/w3images/la.jpg" style="width:100%">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h3>CAROUSAL</h3>
+      <p><b>We will have the best war!</b></p>   
+    </div>
+  </div>
+  <div class="mySlides w3-display-container w3-center">
+    <img src="https://www.w3schools.com/w3images/ny.jpg" style="width:100%">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h3>REGISTER NOW!</h3>
+      <p><b>Come with us what are you waiting for?</b></p>    
+    </div>
+  </div>
+  <div class="mySlides w3-display-container w3-center">
+    <img src="https://www.w3schools.com/w3images/chicago.jpg" style="width:100%">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h3>FUN</h3>
+      <p><b>This will be fun believe me!!!</b></p>    
+    </div>
+  </div>
+
+  <!-- The Tour Section -->
+  <div class="w3-black" id="tour">
+    <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+      <h2 class="w3-wide w3-center">REGISTRATIONS</h2>
+      <p class="w3-opacity w3-center"><i>Remember to register yourself for the following events!</i></p><br>
+
+      <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+        <div class="w3-third w3-margin-bottom">
+          <img src="https://www.w3schools.com/w3images/newyork.jpg" alt="New York" style="width:100%" class="w3-hover-opacity">
+          <div class="w3-container w3-white">
+            <p><b>Boom Boom</b></p>
+            <p class="w3-opacity">Fri 27 Nov 2016</p>
+            <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
+          </div>
+        </div>
+        <div class="w3-third w3-margin-bottom">
+          <img src="https://www.w3schools.com/w3images/paris.jpg" alt="Paris" style="width:100%" class="w3-hover-opacity">
+          <div class="w3-container w3-white">
+            <p><b>Battle</b></p>
+            <p class="w3-opacity">Sat 28 Nov 2016</p>
+            <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
+          </div>
+        </div>
+        <div class="w3-third w3-margin-bottom">
+          <img src="https://www.w3schools.com/w3images/sanfran.jpg" alt="San Francisco" style="width:100%" class="w3-hover-opacity">
+          <div class="w3-container w3-white">
+            <p><b>Fight</b></p>
+            <p class="w3-opacity">Sun 29 Nov 2016</p>
+            <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ticket Modal -->
+  <div id="ticketModal" class="w3-modal">
+    <div class="w3-modal-content w3-animate-top w3-card-4">
+      <header class="w3-container w3-teal w3-center w3-padding-32"> 
+        <span onclick="document.getElementById('ticketModal').style.display='none'" 
+       class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
+        <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Tickets</h2>
+      </header>
+      <div class="w3-container">
+        <p><label><i class="fa fa-shopping-cart"></i> Tickets, $15 per person</label></p>
+        <input class="w3-input w3-border" type="text" placeholder="How many?">
+        <p><label><i class="fa fa-user"></i> Send To</label></p>
+        <input class="w3-input w3-border" type="text" placeholder="Enter email">
+        <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right">PAY <i class="fa fa-check"></i></button>
+        <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal').style.display='none'">Close <i class="fa fa-remove"></i></button>
+        <p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- The Team Section -->
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+    <h2 class="w3-wide">Our Beautiful Team</h2>
+    <p class="w3-opacity"><i>We love music</i></p>
+    <p class="w3-justify">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+    <div class="w3-row w3-padding-32">
+      <div class="w3-col l3 m6">
+        <p>Name</p>
+        <img src="https://www.w3schools.com/w3images/bandmember.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+      </div>
+      <div class="w3-col l3 m6">
+        <p>Name</p>
+        <img src="https://www.w3schools.com/w3images/bandmember.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+      </div>
+      <div class="w3-col l3 m6">
+        <p>Name</p>
+        <img src="https://www.w3schools.com/w3images/bandmember.jpg" class="w3-round" alt="Random Name" style="width:60%">
+      </div>
+      <div class="w3-col l3 m6">
+        <p>Name</p>
+        <img src="https://www.w3schools.com/w3images/bandmember.jpg" class="w3-round" alt="Random Name" style="width:60%">
+      </div>
+    </div>
+  </div>
+  
+  <!-- Sponsor Section -->
+<div class="w3-container w3-black" style="padding:128px 16px" id="work">
+  <h3 class="w3-center">OUR SPONSORS</h3>
+  <p class="w3-center w3-large">What are people dong for us?</p>
+
+  <div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-col l3 m6">
+      <img src="https://www.w3schools.com/w3images/tech_mic.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A microphone">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="https://www.w3schools.com/w3images/tech_phone.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A phone">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="https://www.w3schools.com/w3images/tech_drone.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A drone">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="https://www.w3schools.com/w3images/tech_sound.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Soundbox">
+    </div>
+  </div>
+
+  <div class="w3-row-padding w3-section">
+    <div class="w3-col l3 m6">
+      <img src="https://www.w3schools.com/w3images/tech_tablet.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A tablet">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="https://www.w3schools.com/w3images/tech_camera.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A camera">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="https://www.w3schools.com/w3images/tech_typewriter.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A typewriter">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="https://www.w3schools.com/w3images/tech_tableturner.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A tableturner">
+    </div>
+  </div>
+</div>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">×</span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
+  
+  <!-- Associate With Us Section -->
+  <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+    <h2 class="w3-wide w3-center">Associate With Us</h2>
+    <p class="w3-opacity w3-center"><i>Why? Drop a note!</i></p>
+    <div class="w3-row w3-padding-32">
+      <div class="w3-col m6 w3-large w3-margin-bottom">
+        <i class="fa fa-map-marker" style="width:30px"></i> Marriner Valley, Mars<br>
+        <i class="fa fa-phone" style="width:30px"></i> Phone: #00 151515<br>
+        <i class="fa fa-envelope" style="width:30px"> </i> Email: mail@marsmail.com<br>
+      </div>
+      <div class="w3-col m6">
+        <form action="/action_page.php" target="_blank">
+          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+            </div>
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+            </div>
+          </div>
+          <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+          <button class="w3-button w3-black w3-section w3-right" type="submit">SEND</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+<!-- Why This Event -->
+  <div  class="w3-black">
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+    <h2 class="w3-wide">Why is this Event Even Happening?</h2>
+    <p class="w3-opacity"><i>I dont know</i></p>
+    <p class="w3-justify">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+    </div>
+  </div>
+  </div>
+  
+<!-- End Page Content -->
+</div>
+
+<!-- Image of location/map -->
+<img src="https://www.w3schools.com/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%">
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+  <i class="fa fa-facebook-official w3-hover-opacity"></i>
+  <i class="fa fa-instagram w3-hover-opacity"></i>
+  <i class="fa fa-snapchat w3-hover-opacity"></i>
+  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+  <i class="fa fa-twitter w3-hover-opacity"></i>
+  <i class="fa fa-linkedin w3-hover-opacity"></i>
+  <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+  <script type="text/javascript">
+  // Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 4000);    
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+  
+</body>
+</html>
