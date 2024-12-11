@@ -324,57 +324,66 @@ document.querySelector("#check-icon").addEventListener("change", updateNavbarBac
     </div>
 </section>
 
-    <style>
-      /* Read More Button */
+<style>
+  /* Read More Button */
+  .read-more-btn {
+      background: none;
+      border: none;
+      color: rgb(22, 100, 173);
+      cursor: pointer;
+      font-size: 18px;
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      transition: color 0.3s ease;
+  }
+
+  .read-more-btn:hover {
+      color: #17498c;
+  }
+
+  /* Content Transition Effect */
+  .content {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2; /* Show only 2 lines by default */
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      transition: max-height 0.5s ease;
+      max-height: 3.6em; /* Adjust based on the line height */
+  }
+
+  .content.expanded {
+      -webkit-line-clamp: unset;
+      max-height: 1000px; /* A large enough value for smooth expansion */
+      transition: max-height 0.5s ease;
+  }
+
+  @media (max-width: 768px) {
       .read-more-btn {
-          background: none;
-          border: none;
-          color: rgb(22, 100, 173);
-          cursor: pointer;
-          font-size: 18px;
-          margin-top: 10px;
-          display: flex;
-          
-          align-items: center;
-          transition: color 0.3s ease;
+          margin-left: auto; /* Push the button to the right */
+          justify-content: flex-end; /* Align the button to the right inside the flex container */
       }
-      
-      .read-more-btn:hover {
-          color: #17498c;
-      }
-      
-      .content {
-          overflow: hidden;
-          display: -webkit-box;
-          -webkit-line-clamp: 2; /* Show only 3 lines by default */
-          -webkit-box-orient: vertical;
-          text-overflow: ellipsis;
-          transition: max-height 0.5s ease;
-      }
-      
-      .content.expanded {
-          -webkit-line-clamp: unset;
-          display: block;
-      }
-      </style>
-      
-      <script>
-      document.querySelectorAll(".read-more-btn").forEach(button => {
-          button.addEventListener("click", function () {
-              const content = this.previousElementSibling; // Get the <p> element before the button
-              content.classList.toggle("expanded");
-              const icon = this.querySelector("i");
-              if (content.classList.contains("expanded")) {
-                  icon.classList.remove("fa-angles-down");
-                  icon.classList.add("fa-angles-up");
-              } else {
-                  icon.classList.remove("fa-angles-up");
-                  icon.classList.add("fa-angles-down");
-              }
-          });
+  }
+</style>
+
+<script>
+  // Toggle content visibility
+  document.querySelectorAll(".read-more-btn").forEach(button => {
+      button.addEventListener("click", function () {
+          const content = this.previousElementSibling; // Get the <p> element before the button
+          content.classList.toggle("expanded");
+          const icon = this.querySelector("i"); // Toggle icon class
+          if (content.classList.contains("expanded")) {
+              icon.classList.remove("fa-angles-down");
+              icon.classList.add("fa-angles-up");
+          } else {
+              icon.classList.remove("fa-angles-up");
+              icon.classList.add("fa-angles-down");
+          }
       });
-      </script>
-  
+  });
+</script>
 <style>
    /* Overall Section Styling */
 .services-details-section {
