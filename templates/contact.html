@@ -11,7 +11,7 @@
             src: url(/static/Cabin-Medium.ttf);
         }
         body {
-            font-family:myfont;
+            font-family: myfont;
             margin: 0;
             padding: 0;
             background-color: #f4f7fa;
@@ -43,11 +43,10 @@
             flex-wrap: wrap;
             gap: 40px;
             justify-content: space-between;
-            margin-bottom: 40px;
         }
 
         .contact-details, .contact-form {
-            flex: 1 1 48%;
+            flex: 1 1 25%;
             background: #ffffff;
             border-radius: 12px;
             padding: 30px;
@@ -76,21 +75,17 @@
             color: #17498c;
         }
 
-        .contact-form h3 {
-            font-size: 1.8em;
-            margin-bottom: 25px;
-        }
-
         .contact-form label {
             font-weight: 600;
             margin-bottom: 8px;
             font-size: 1.1em;
             display: block;
+            width:70%;
         }
 
         .contact-form input,
         .contact-form textarea {
-            width: 100%;
+            width: 90%;
             padding: 15px;
             margin-bottom: 20px;
             border: 1px solid #ccc;
@@ -111,10 +106,11 @@
             background-color: #17498c;
             color: white;
             border: none;
-            border-radius: 8px;
+            border-radius: 30px;
             font-size: 1.1em;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            width:97%;
         }
 
         .contact-form button:hover {
@@ -132,30 +128,7 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
-        footer {
-            background-color: #17498c;
-            color: white;
-            text-align: center;
-            padding: 30px;
-            margin-top: 40px;
-            border-radius: 8px;
-        }
-
-        footer p {
-            font-size: 1.1em;
-            margin: 10px 0;
-        }
-
-        footer a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        footer a:hover {
-            color: #e1e1e1;
-        }
+       
 
         @media (max-width: 768px) {
             .contact-section {
@@ -230,12 +203,143 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3932.85318522709!2d76.312156!3d9.994045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080c7c648e8b01%3A0x7f8c2b196fa13a71!2sKalamassery%2C%20Kochi%2C%20Kerala!5e0!3m2!1sen!2sin!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
         </div>
 
-        <footer>
-            <p>Life Planner Studies & Opportunities, CANADA<br>196 Hawkwood Blvd. NW Calgary, Alberta Canada, T3G2T1<br>Contact Person: Mary Ann Go<br>Paralegal/ Regulated Canadian Immigration Consultant<br>ICCRC ID: R508947</p>
-            <p>POLAND<br>90-423 Lodz, PIOTRKOWSKA<br>Lifeplanner Studies & Opportunities (P) Ltd.<br>Email: info@lifeplanneruniversal.com<br>Contact: +91 9072222911, +91 9072222933</p>
-            <p>WE ARE HIRING</p>
-            <p>&copy; 2024 Lifeplanner. All rights reserved. <a href="#">Privacy Policy</a></p>
-        </footer>
+       
     </div>
+        <!-- Footer Section -->
+<footer class="footer">
+    <div class="container">
+      <div class="row">
+        <!-- About Section -->
+        <div class="footer-column">
+          <img src="/static/LPRlogo.png" style="height:150px;">
+          <p>
+            We are dedicated to helping students create a new life abroad by connecting them with top universities and resources to achieve their dreams.
+          </p>
+        </div>
+  
+        <!-- Quick Links Section -->
+        <div class="footer-column" style="margin-top: 50px;">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Back-To-Top</a></li>
+          </ul>
+        </div>
+  
+        <!-- Contact Section -->
+        <div class="footer-column"  style="margin-top: 50px;">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><strong>Email:</strong>info@lifeplanneruniversal.com</li>
+            <li><strong>Phone:</strong> +91 9072222911<br>+91 9072222933</li>
+            <li><strong>Address:</strong>pathadipalam,Edapally,Kochi </li>
+          </ul>
+        </div>
+  
+        <!-- Social Media Section -->
+        <div class="footer-column"  style="margin-top: 50px;">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#" style="margin:5px;"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" style="margin:5px;"><i class="fab fa-twitter"></i></a>
+            <a href="#" style="margin:5px;"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" style="margin:5px;"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Life Planner. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Footer Styles -->
+  <style>
+  .footer {
+    background:#242323;
+         
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .footer h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .footer p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 20px;
+  }
+  
+  .footer-column {
+    margin-bottom: 30px;
+  }
+  
+  .footer ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .footer ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Social Icons */
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .social-icons a {
+    color: white;
+    font-size: 1.5rem;
+  }
+  
+  .social-icons a:hover {
+    color: #00aced;
+  }
+  
+  /* Footer Bottom */
+  .footer-bottom {
+    margin-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 20px;
+    font-size: 0.9rem;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+  }
+  
+  /* Responsive Design */
+  @media (min-width: 768px) {
+    .row {
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    .footer-column {
+      flex: 1;
+      padding: 0 15px;
+    }
+  }
+  </style>
 </body>
 </html>
