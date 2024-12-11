@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Lifeplanner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @font-face {
+            font-family: myfont;
+            src: url(/static/Cabin-Medium.ttf);
+        }
+        body {
+            font-family: myfont;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #17498c;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        .breadcrumb {
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .contact-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .contact-details, .contact-form, .map-section {
+            flex: 1 1 calc(50% - 30px);
+            background: #fff;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-details h3 {
+            color: #17498c;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            margin-bottom: 18px;
+            font-size: 1.1em;
+        }
+
+        .contact-item i {
+            margin-right: 10px;
+            color: #17498c;
+        }
+
+        .contact-form h3 {
+            color: #17498c;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .contact-form label {
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1em;
+            background-color: #f8f8f8;
+        }
+
+        .contact-form button {
+            background-color: #17498c;
+            color: white;
+            padding: 12px 20px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #0e3464;
+        }
+
+        .map-section iframe {
+            width: 100%;
+            height: 350px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: #17498c;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+            border-radius: 5px;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .contact-details, .contact-form, .map-section {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <div class="breadcrumb">Home \ Contact Us</div>
+
+        <div class="contact-section">
+            <!-- Contact Details -->
+            <div class="contact-details">
+                <h3>Contact Information</h3>
+
+                <div class="contact-item">
+                    <i class="fas fa-user"></i><strong>Sujin C Cherian</strong><br>Chairman<br>Email: md@lifeplanneruniversal.com
+                </div>
+
+                <h4>Head Office</h4>
+                <div class="contact-item">
+                    <i class="fas fa-location-dot"></i>2nd Floor, Thevarolil Building, Near Darshana Academy, Sastri Road, Kottayam<br>
+                    <i class="fas fa-phone"></i>+91 9072222911<br>
+                    <i class="fas fa-envelope"></i>info@lifeplanneruniversal.com
+                </div>
+
+                <h4>Corporate Office</h4>
+                <div class="contact-item">
+                    <i class="fas fa-location-dot"></i>2nd floor, Kummenchery Building, Metro pillar No.344, NH 47, Pathadipalam, Kalamassery, Kochi-682033<br>
+                    <i class="fas fa-phone"></i>+91 9072222933<br>
+                    <i class="fas fa-envelope"></i>info@lifeplanneruniversal.com
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h3>Send Us a Message</h3>
+                <form>
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="Enter subject" required>
+
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" placeholder="Type your message here..." rows="5" required></textarea>
+
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Map Section -->
+        <div class="map-section">
+            <h3>Our Locations</h3>
+            <h4>Kottayam (Head Office)</h4>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.829412842771!2d76.523034!3d9.591567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0629fd9f07b621%3A0xb44e03e56a1dcbeb!2sSastri%20Rd%2C%20Kottayam%2C%20Kerala!5e0!3m2!1sen!2sin!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
+
+            <h4>Kochi (Corporate Office)</h4>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3932.85318522709!2d76.312156!3d9.994045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080c7c648e8b01%3A0x7f8c2b196fa13a71!2sKalamassery%2C%20Kochi%2C%20Kerala!5e0!3m2!1sen!2sin!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <footer>
+            <p>Life Planner Studies & Opportunities, CANADA<br>196 Hawkwood Blvd. NW Calgary, Alberta Canada, T3G2T1<br>Contact Person: Mary Ann Go<br>Paralegal/ Regulated Canadian Immigration Consultant<br>ICCRC ID: R508947</p>
+            <p>POLAND<br>90-423 Lodz, PIOTRKOWSKA<br>Lifeplanner Studies & Opportunities (P) Ltd.<br>Email: info@lifeplanneruniversal.com<br>Contact: +91 9072222911, +91 9072222933</p>
+            <p>WE ARE HIRING</p>
+            <p>&copy; 2024 Lifeplanner. All rights reserved. <a href="#">Privacy Policy</a></p>
+        </footer>
+    </div>
+</body>
+</html>

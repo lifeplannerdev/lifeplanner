@@ -9,5 +9,6 @@ urlpatterns = [
    path('teamupdate/', views.teamupdate, name='teamupdate'),
    path('profile/<int:pk>/', views.profile, name='profile'),
    path('albums/',views.albums,name='albums'),
+   path('contact/',views.contact,name='contact'),
  
 ]

@@ -96,3 +96,6 @@ def profile(request, pk):
 
 def albums(request):
     return render(request,"albums.html")
+
+def contact(request):
+    return render(request,"contact.html")    
