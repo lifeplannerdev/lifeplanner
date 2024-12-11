@@ -345,18 +345,12 @@ document.querySelector("#check-icon").addEventListener("change", updateNavbarBac
   /* Content Transition Effect */
   .content {
       overflow: hidden;
-      display: -webkit-box;
-      -webkit-line-clamp: 2; /* Show only 2 lines by default */
-      -webkit-box-orient: vertical;
-      text-overflow: ellipsis;
+      max-height: 3.6em; /* Height for 2 lines */
       transition: max-height 0.5s ease;
-      max-height: 3.6em; /* Adjust based on the line height */
   }
 
   .content.expanded {
-      -webkit-line-clamp: unset;
-      max-height: 1000px; /* A large enough value for smooth expansion */
-      transition: max-height 0.5s ease;
+      max-height: 1000px; /* Large enough to accommodate full content */
   }
 
   @media (max-width: 768px) {
@@ -368,19 +362,28 @@ document.querySelector("#check-icon").addEventListener("change", updateNavbarBac
 </style>
 
 <script>
-  // Toggle content visibility
   document.querySelectorAll(".read-more-btn").forEach(button => {
       button.addEventListener("click", function () {
           const content = this.previousElementSibling; // Get the <p> element before the button
-          content.classList.toggle("expanded");
-          const icon = this.querySelector("i"); // Toggle icon class
+          const icon = this.querySelector("i"); // Get the icon in the button
+
           if (content.classList.contains("expanded")) {
-              icon.classList.remove("fa-angles-down");
-              icon.classList.add("fa-angles-up");
+              // Collapse
+              content.style.maxHeight = `${content.scrollHeight}px`; // Set current height
+              requestAnimationFrame(() => {
+                  content.style.maxHeight = "3.6em"; // Animate to collapsed height
+              });
           } else {
-              icon.classList.remove("fa-angles-up");
-              icon.classList.add("fa-angles-down");
+              // Expand
+              content.style.maxHeight = `${content.scrollHeight}px`; // Set to current height
+              requestAnimationFrame(() => {
+                  content.style.maxHeight = "1000px"; // Set large max-height for full expansion
+              });
           }
+
+          content.classList.toggle("expanded");
+          icon.classList.toggle("fa-angles-down");
+          icon.classList.toggle("fa-angles-up");
       });
   });
 </script>
