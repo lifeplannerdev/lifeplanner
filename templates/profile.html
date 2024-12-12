@@ -101,17 +101,7 @@
             background-color: #fbbf24;
         }
 
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #63acff;
-            color: white;
-            border-top-left-radius: 50px;
-            border-top-right-radius: 50px;
-            font-size: 14px;
-            margin-top: 50px;
-        }
+        
     </style>
 </head>
 <body>
@@ -271,9 +261,9 @@
  <!-- Profile Header -->
 <div class="profile-header">
     <div class="container">
-        <div class="row align-items-center">
+        <div class="row align-items-center" >
             <!-- Profile Section -->
-            <div class="col-md-4 text-center text-md-start">
+            <div class="col-md-4 text-center text-md-start" >
                 <img src="{{ team_member.img.url }}" alt="{{ team_member.name }}" class="profile-pic-large">
                 <h2 class="profile-name">{{ team_member.name }}</h2>
                 <p class="profile-phone"> {{ team_member.post }}</p>
@@ -294,17 +284,66 @@
                     </a>
                 </div>
             </div>
+            
+            <div class="review-list-container mt-4 col-md-8 mt-4 mt-md-0" style="border-radius: 20px;">
+                
+                <div class="review-list">
+                    
+                    {% for review in reviews %}
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ review.review }}</h5>
+                            <p class="card-text">by {{ review.name }}</p>
+                            <small class="text-muted">Posted on {{ review.created_at|date:"M d, Y H:i" }}</small>
+                        </div>
+                    </div>
+                    {% empty %}
+                    <h4 class="text-center text-dark">No reviews yet. Be the first to review!</h4>
+                    {% endfor %}
+                </div>
+                
+            </div>
+            
 
-            <!-- Bio Section -->
+<!--           
             <div class="col-md-8 mt-4 mt-md-0" style="border:3px solid rgb(255, 255, 255);border-radius: 30px;padding:20px;">
                 <h3>Bio</h3>
                 <p class="bio-text mt-3 text-white">{{ team_member.bio }}</p>
-            </div>
+            </div> -->
         </div>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addReviewModal" style="border-radius:30px;margin-top: 30px;">
+            <i class="fa-solid fa-circle-plus mt-1"></i> Review
+        </button>
     </div>
 </div>
 
     <style>
+        /* Make the review section scrollable */
+.review-list-container {
+    max-height: 500px; /* Adjust the height based on your design */
+    overflow-y: scroll;
+    scrollbar-width: thin; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+.review-list-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.review-list-container::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.review-list-container::-webkit-scrollbar-thumb:hover {
+    background-color: #bbb;
+}
+
+/* Optional: Add padding for better appearance */
+.review-list-container {
+    padding-right: 10px;
+}
+
         /* Bio Section */
 .container h3 {
     font-size: 24px;
@@ -322,7 +361,7 @@
 .review-title {
     font-size: 32px;
     font-weight: bold;
-    background: linear-gradient(135deg, #6C63FF, #5fbfff);
+    background: linear-gradient(135deg, #050505, #222222);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 20px;
@@ -330,7 +369,7 @@
 }
 .review-list .card {
     border: 1px solid #ddd;
-    border-radius: 30px;
+    border-radius: 20px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -349,30 +388,6 @@
 
 
     </style>
-    <div class="container mt-5">
-        <!-- Add Review Button -->
-        <div class="text-center mb-4">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addReviewModal" style="border-radius:30px;">
-                <i class="fa-solid fa-circle-plus mt-1"></i> Review
-            </button>
-        </div>
-    
-        <!-- Reviews Section -->
-        <h3 class="text-center review-title">REVIEWS</h3>
-        <div class="review-list mt-4">
-            {% for review in reviews %}
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">{{ review.review }}</h5>
-                    <p class="card-text">by {{ review.name }}</p>
-                    <small class="text-muted">Posted on {{ review.created_at|date:"M d, Y H:i" }}</small>
-                </div>
-            </div>
-            {% empty %}
-            <h4 class="text-center text-dark">No reviews yet. Be the first to review!</h4>
-            {% endfor %}
-        </div>
-    </div>
     
     <style>
 
@@ -605,9 +620,142 @@
     
 
     <!-- Footer -->
-    <div class="footer">
-        <p>&copy; 2024 LifePlanner. All rights reserved.</p>
-    </div>
+    <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <!-- About Section -->
+            <div class="footer-column">
+              <img src="/static/LPRlogo.png" style="height:150px;">
+              <p>
+                We are dedicated to helping students create a new life abroad by connecting them with top universities and resources to achieve their dreams.
+              </p>
+            </div>
+      
+            <!-- Quick Links Section -->
+            <div class="footer-column" style="margin-top: 50px;">
+              <h3>Quick Links</h3>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Back-To-Top</a></li>
+              </ul>
+            </div>
+      
+            <!-- Contact Section -->
+            <div class="footer-column"  style="margin-top: 50px;">
+              <h3>Contact Us</h3>
+              <ul>
+                <li><strong>Email:</strong>info@lifeplanneruniversal.com</li>
+                <li><strong>Phone:</strong> +91 9072222911<br>+91 9072222933</li>
+                <li><strong>Address:</strong>pathadipalam,Edapally,Kochi </li>
+              </ul>
+            </div>
+      
+            <!-- Social Media Section -->
+            <div class="footer-column"  style="margin-top: 50px;">
+              <h3>Follow Us</h3>
+              <div class="social-icons">
+                <a href="#" style="margin:5px;"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" style="margin:5px;"><i class="fab fa-twitter"></i></a>
+                <a href="#" style="margin:5px;"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" style="margin:5px;"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2024 Life Planner. All Rights Reserved.</p>
+          </div>
+        </div>
+      </footer>
+      
+      <!-- Footer Styles -->
+      <style>
+      .footer {
+        background:#242323;
+             
+        color: white;
+        padding: 40px 0;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        margin-top: 100px;
+      }
+      
+      .footer h3 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+      
+      .footer p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-top: 20px;
+      }
+      
+      .footer-column {
+        margin-bottom: 30px;
+      }
+      
+      .footer ul {
+        list-style: none;
+        padding: 0;
+      }
+      
+      .footer ul li {
+        margin-bottom: 10px;
+      }
+      
+      .footer ul li a {
+        color: white;
+        text-decoration: none;
+      }
+      
+      .footer ul li a:hover {
+        text-decoration: underline;
+      }
+      
+      /* Social Icons */
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+      
+      .social-icons a {
+        color: white;
+        font-size: 1.5rem;
+      }
+      
+      .social-icons a:hover {
+        color: #00aced;
+      }
+      
+      /* Footer Bottom */
+      .footer-bottom {
+        margin-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        padding-top: 20px;
+        font-size: 0.9rem;
+      }
+      
+      .footer-bottom p {
+        margin: 0;
+      }
+      
+      /* Responsive Design */
+      @media (min-width: 768px) {
+        .row {
+          display: flex;
+          justify-content: space-between;
+        }
+      
+        .footer-column {
+          flex: 1;
+          padding: 0 15px;
+        }
+      }
+      </style>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
