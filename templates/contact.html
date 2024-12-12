@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Lifeplanner</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.3.0/flickity.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -334,7 +335,156 @@ form span a:hover {
     
 </div>
 </div>
+<!-- profile cards -->
+<style>
+  .profile-cards-wrapper {
+      margin: 50px auto;
+      
+      text-align: center;
+  }
 
+  .profile-heading {
+      font-size: 24px;
+      font-weight: bold;
+      color:  rgb(22, 100, 173);
+      margin-bottom: -5px;
+  }
+
+  .profile-cards-container {
+display: flex;
+justify-content: flex-start; 
+gap: 20px;
+overflow-x: auto; 
+padding: 30px;
+scroll-padding-left: 10px;
+scrollbar-width: none;
+scrollbar-color: rgb(22, 100, 173) #f9f9f9;
+}
+
+.profile-cards-container::-webkit-scrollbar {
+height: 8px;
+}
+
+.profile-cards-container::-webkit-scrollbar-thumb {
+background:  rgb(22, 100, 173);
+border-radius: 10px;
+}
+
+.profile-card {
+flex: 0 0 200px; /* Maintain consistent card width */
+background: #f9f9f9;
+border-radius: 20px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+padding: 15px;
+text-align: center;
+}
+
+@media (min-width: 768px) {
+.profile-cards-container {
+  justify-content: center; /* Center cards on larger screens */
+}
+}
+
+@media (max-width: 768px) {
+.profile-card {
+  flex: 0 0 70%; /* Wider cards for better visibility on mobile */
+}
+}
+  .profile-pic {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      object-fit: cover;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .profile-name {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 10px 0 5px;
+      color:  rgb(22, 100, 173);
+  }
+
+  .profile-specialization {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 15px;
+  }
+
+  .review-button {
+      background-color: white;
+      color:  rgb(22, 100, 173);
+      border: none;
+      padding: 8px 16px;
+      font-size: 14px;
+      border-radius: 30px;
+      margin-bottom:20px;
+      cursor: pointer;
+      border:solid 1px  rgb(22, 100, 173);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .review-button:hover {
+      background-color:  rgb(22, 100, 173);
+      transform: scale(1.05);
+      color:white;
+      
+  }
+
+  @media (max-width: 768px) {
+      .profile-card {
+          flex: 0 0 70%;
+      }
+  }
+</style>
+<div class="profile-cards-wrapper">
+  <h2 class="profile-heading">OUR EXECUTIVES</h2>
+  <div class="profile-cards-container">
+      
+      <div class="profile-card">
+          <img src="/static/ardra.jpg" alt="Profile Picture" class="profile-pic">
+          <h3 class="profile-name">Shumaila</h3>
+          <p class="profile-specialization">Visa Processing</p>
+          <a href="" class="review-button" style="margin-top: 10px;text-decoration:none;">
+              <i class="fa-solid fa-phone" style="margin-right: 10px;"></i>C
+          </a>
+      </div>
+      <div class="profile-card">
+        <img src="/static/ardra.jpg" alt="Profile Picture" class="profile-pic">
+        <h3 class="profile-name">Shumaila</h3>
+        <p class="profile-specialization">Visa Processing</p>
+        <a href="" class="review-button" style="margin-top: 10px;text-decoration:none;">
+            <i class="fa-solid fa-phone" style="margin-right: 10px;"></i>C
+        </a>
+    </div>
+    <div class="profile-card">
+      <img src="/static/ardra.jpg" alt="Profile Picture" class="profile-pic">
+      <h3 class="profile-name">Shumaila</h3>
+      <p class="profile-specialization">Visa Processing</p>
+      <a href="" class="review-button" style="margin-top: 10px;text-decoration:none;">
+          <i class="fa-solid fa-phone" style="margin-right: 10px;"></i>C
+      </a>
+  </div>
+  <div class="profile-card">
+    <img src="/static/ardra.jpg" alt="Profile Picture" class="profile-pic">
+    <h3 class="profile-name">Shumaila</h3>
+    <p class="profile-specialization">Visa Processing</p>
+    <a href="" class="review-button" style="margin-top: 10px;text-decoration:none;">
+        <i class="fa-solid fa-phone" style="margin-right: 10px;"></i>C
+    </a>
+</div>
+<div class="profile-card">
+  <img src="/static/ardra.jpg" alt="Profile Picture" class="profile-pic">
+  <h3 class="profile-name">Shumaila</h3>
+  <p class="profile-specialization">Visa Processing</p>
+  <a href="" class="review-button" style="margin-top: 10px;text-decoration:none;">
+      <i class="fa-solid fa-phone" style="margin-right: 10px;"></i>Contact
+  </a>
+</div>
+    
+  </div>
+</div>
 
         <!-- Map Section -->
         <div class="map-section">
@@ -485,6 +635,7 @@ form span a:hover {
   }
   </style>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.3.0/flickity.pkgd.min.js"></script>
+      <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 </body>
 </html>
