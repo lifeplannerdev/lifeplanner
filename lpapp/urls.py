@@ -10,5 +10,6 @@ urlpatterns = [
    path('profile/<int:pk>/', views.profile, name='profile'),
    path('albums/',views.albums,name='albums'),
    path('contact/',views.contact,name='contact'),
+   path('canada/',views.canada,name='canada'),
  
 ]

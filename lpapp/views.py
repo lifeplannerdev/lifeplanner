@@ -98,4 +98,7 @@ def albums(request):
     return render(request,"albums.html")
 
 def contact(request):
-    return render(request,"contact.html")    
+    return render(request,"contact.html")   
+
+def canada(request):
+    return render(request,"canada.html")
