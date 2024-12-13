@@ -513,39 +513,95 @@ button:hover::before {
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;">Frequently Asked Questions</h2>
         <div class="faq">
-            <h4>Why Canada?</h4>
-            <ul>
-                <li>Second largest country in the world</li>
-                <li>Tenth biggest economy in the world</li>
-                <li>Developing country</li>
-                <li>Federal governance system instead of Unitary</li>
-                <li>75% of unutilized landmass</li>
-                <li>Unexploited natural resources</li>
-                <li>Low population of three and a half crore</li>
-            </ul>
 
-            <h4>Benefits of Canada</h4>
-            <ul>
-                <li>Immense chance for immigration being the second largest country in the world with a population size similar to that of Kerala.</li>
-                <li>Steady economic growth and abundance of natural resources that assures a sustainable future for Canada.</li>
-                <li>Immigrant labour force required for infrastructure developed in its fast-growing economy. This proves why Canada has an immigrant population of 90% immigrants.</li>
-            </ul>
+            <div class="faq-item">
+                <h4>Why Canada?</h4>
+                <div class="faq-content">
+                    <ul>
+                        <li>Second largest country in the world</li>
+                        <li>Tenth biggest economy in the world</li>
+                        <li>Developing country</li>
+                        <li>Federal governance system instead of Unitary</li>
+                        <li>75% of unutilized landmass</li>
+                        <li>Unexploited natural resources</li>
+                        <li>Low population of three and a half crore</li>
+                    </ul>
+                </div>
+                <a href="javascript:void(0)" class="read-more">Read More</a>
+            </div>
 
-            <h4>Why Life Planner?</h4>
-            <ul>
-                <li>12 years of experience in the field</li>
-                <li>Many happy students and a large number of them became Canadian citizens after studies.</li>
-                <li>Transparent processing without any hidden unnecessary charges.</li>
-                <li>A friendly team of experts to assist you.</li>
-                <li>Detailed counselling conducted throughout admission and visa processing after understanding the talent, interest, and study skills of individual students.</li>
-                <li>Being a Federal governance system, all 10 provinces of Canada have different immigration laws. We help you choose Provinces with lesser immigration restrictions so you can become a permanent resident soon.</li>
-                <li>Expert training through Gurukulam mode of education at our own Academy to ensure that you get admission with excellent IELTS score. Free training for selected candidates.</li>
-                <li>Dedicated service provided in admission and visa processing, airport pick-up, and even arranging a place for you to stay in a new country.</li>
-                <li>Find a job in Canada after studies with the help of our Immigration Consultant Office.</li>
-            </ul>
+            <div class="faq-item">
+                <h4>Benefits of Canada</h4>
+                <div class="faq-content">
+                    <ul>
+                        <li>Immense chance for immigration being the second largest country in the world with a population size similar to that of Kerala.</li>
+                        <li>Steady economic growth and abundance of natural resources that assures a sustainable future for Canada.</li>
+                        <li>Immigrant labour force required for infrastructure developed in its fast-growing economy. This proves why Canada has an immigrant population of 90% immigrants.</li>
+                    </ul>
+                </div>
+                <a href="javascript:void(0)" class="read-more">Read More</a>
+            </div>
+
+            <div class="faq-item">
+                <h4>Why Life Planner?</h4>
+                <div class="faq-content">
+                    <ul>
+                        <li>12 years of experience in the field</li>
+                        <li>Many happy students and a large number of them became Canadian citizens after studies.</li>
+                        <li>Transparent processing without any hidden unnecessary charges.</li>
+                        <li>A friendly team of experts to assist you.</li>
+                        <li>Detailed counselling conducted throughout admission and visa processing after understanding the talent, interest, and study skills of individual students.</li>
+                        <li>Being a Federal governance system, all 10 provinces of Canada have different immigration laws. We help you choose Provinces with lesser immigration restrictions so you can become a permanent resident soon.</li>
+                        <li>Expert training through Gurukulam mode of education at our own Academy to ensure that you get admission with excellent IELTS score. Free training for selected candidates.</li>
+                        <li>Dedicated service provided in admission and visa processing, airport pick-up, and even arranging a place for you to stay in a new country.</li>
+                        <li>Find a job in Canada after studies with the help of our Immigration Consultant Office.</li>
+                    </ul>
+                </div>
+                <a href="javascript:void(0)" class="read-more">Read More</a>
+            </div>
+
         </div>
     </div>
 </section>
+
+<style>
+    .faq-item {
+        margin-bottom: 20px;
+    }
+
+    .faq-content {
+        max-height: 80px; /* Show only the first few lines */
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .faq-item.expanded .faq-content {
+        max-height: 500px; /* Adjust to accommodate full content */
+    }
+
+    .read-more {
+        color: #5f9cad;
+        text-decoration: none;
+        font-weight: bold;
+        cursor: pointer;
+        position: absolute;
+        right: 50px;
+        
+        
+    }
+</style>
+
+<script>
+    document.querySelectorAll('.read-more').forEach(function(button) {
+        button.addEventListener('click', function() {
+            const faqItem = this.closest('.faq-item');
+            faqItem.classList.toggle('expanded');
+            this.textContent = faqItem.classList.contains('expanded') ? 'Read Less' : 'Read More';
+        });
+    });
+</script>
+
+
 
 <!-- Footer -->
 <footer class="footer">
