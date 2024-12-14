@@ -12,5 +12,6 @@ urlpatterns = [
    path('contact/',views.contact,name='contact'),
    path('canada/',views.canada,name='canada'),
    path('studycanada/',views.studycanada,name='studycanada'),
+   path('about/',views.about,name='about'),
  
 ]

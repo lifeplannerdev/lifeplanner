@@ -104,3 +104,6 @@ def canada(request):
     return render(request,"canada.html")
 def studycanada(request):
     return render(request,"studycanada.html")    
+
+def about(request):
+    return render(request,"about.html")
