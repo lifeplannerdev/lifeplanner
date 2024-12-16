@@ -230,10 +230,32 @@ document.querySelector("#check-icon").addEventListener("change", updateNavbarBac
     </style>
     <div class="container-fluid p-0">
       <div class="hero-section d-flex align-items-end justify-content-center">
-          <div class="overlay w-100 d-flex justify-content-center align-items-center" style="margin-top: -100px;">
-              
-              <!-- <button class="button2" id="learnMoreBtn">Learn More</button> -->
-          </div>
+        <div class="overlay w-100 d-flex justify-content-center align-items-center" 
+        style="margin-top: -100px; padding: 20px; animation: fadeInUp 1.5s ease-out;">
+                 
+       <h4 class="text-center" style="font-size: 36px; color: white; font-weight: bold; margin-bottom: 50px; border-radius: 20px; background: rgba(0, 0, 0, 0.623); padding: 20px 10px;">
+           WE PROVIDE THE BEST SERVICES
+       </h4>
+   </div>
+   
+   <style>
+   /* Define the fade-in-up animation */
+   @keyframes fadeInUp {
+       from {
+           opacity: 0; /* Start fully transparent */
+           transform: translateY(50px); /* Start slightly below */
+       }
+       to {
+           opacity: 1; /* End fully visible */
+           transform: translateY(0); /* End at the original position */
+       }
+   }
+   
+   /* Add a fallback for reusable classes */
+   .overlay {
+       animation: fadeInUp 1.5s ease-out; /* Duration and timing */
+   }
+   </style>
       </div>
   </div>
 
