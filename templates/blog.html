@@ -97,10 +97,11 @@
 }
 
 .blog-card .btn {
-    margin-top: auto; /* Push the button to the bottom if space allows */
+    
     border-radius: 30px;
     background: linear-gradient(135deg, #80bccd, #9e9ed4);
     border:none;
+    
     
 }
 @media (max-width: 767px) {
@@ -328,9 +329,8 @@
                 <div class="blog-card">
                     <img src="/static/ger.jpg" alt="Blog 1">
                     <div class="card-body">
-                        <h5 class="card-title">DUAL VOCATIONAL TRAINING IN GERMANY</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel urna non lacus bibendum tincidunt.</p>
-                        <a href="#" class="btn btn-primary">Read More</a>
+                        <h5 class="card-title">Why the German Chance Card Program Plays a Key Role in Finding Suitable Jobs in Germany?</h5>
+                        <a href="{% url 'lpapp:blog1' %}" class="btn btn-primary">Read More</a>
                     </div>
                 </div>
             </div>
@@ -338,14 +338,12 @@
             <!-- Additional Blog Cards -->
             <div class="col-md-4 mb-4">
                 <div class="blog-card">
-                    <img src="/static/doc.jpg" alt="Blog 2">
+                    <img src="https://images.pexels.com/photos/9242810/pexels-photo-9242810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Blog 2">
                     <div class="card-body">
                         <h5 class="card-title">
-                            Jun
-                            07
-                            Study Integrated Master Degree in MEDICINE</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel urna non lacus bibendum tincidunt.</p>
-                        <a href="#" class="btn btn-primary">Read More</a>
+                            What You Need to Know Before Starting Ausbildung in Germany
+</h5>
+                        <a href="{% url 'lpapp:blog2' %}" class="btn btn-primary">Read More</a>
                     </div>
                 </div>
             </div>
@@ -355,7 +353,6 @@
                     <img src="https://images.pexels.com/photos/21627/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Blog 3">
                     <div class="card-body">
                         <h5 class="card-title">MAY become GERMAN”</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel urna non lacus bibendum tincidunt.</p>
                         <a href="#" class="btn btn-primary">Read More</a>
                     </div>
                 </div>

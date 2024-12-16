@@ -107,3 +107,9 @@ def studycanada(request):
 
 def about(request):
     return render(request,"about.html")
+
+def blog1(request):
+    return render(request,"blog1.html")
+
+def blog2(request):
+    return render(request,"blog1.html")
