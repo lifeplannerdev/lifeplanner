@@ -972,9 +972,15 @@ window.addEventListener("click", function (event) {
     
             <!-- Buttons Section -->
             <div class="button-container">
+                <a href="{% url 'lpapp:blog' %}">
                 <button class="action-button">BLOG</button>
-                <button class="action-button">IMMIGRATION</button>
-                <button class="action-button">UNIVERSITIES</button>
+                </a>
+                <a href="{% url 'lpapp:canada' %}">
+                    <button class="action-button">IMMIGRATION</button>
+                    </a>
+                    <a href="{% url 'lpapp:studycanada' %}">
+                        <button class="action-button">COUNTRIES</button>
+                        </a>
                 <button class="action-button locationLink">LOCATION</button>
             </div>
         </div>
@@ -1752,9 +1758,17 @@ window.addEventListener("click", function (event) {
                 
               </div>
           </div>
+          <div style="display:flex;justify-content: center;align-items: center;margin-top: 30px;">
+            <a href="{% url 'lpapp:service' %}">
+            <button type="button" class="btn btn" style="border-radius: 30px;background: linear-gradient(135deg, #5f9cad, #8080bc);color: white;font-weight: 800px;">View Services<i class="fa-solid fa-right-to-bracket" style="margin-left: 10px;"></i></button>
+        </a>  
         </div>
+          
+        </div>
+        
     
         </div>
+        
         <style>
         /* Section Container */
         .slideshow-section {
