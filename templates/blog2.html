@@ -201,7 +201,16 @@
   --rotate-bar-three: -45deg;
 }
 
-
+@keyframes slideFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
     </style>
     <nav class="navbar navbar-expand-lg navbar-dark">
         <img src="/static/LPsymbol.png" style="height:40px;width:90px;">
@@ -245,6 +254,11 @@
   document.querySelector("#check-icon").addEventListener("change", updateNavbarBackground);
   
       </script>
+      <style>
+        header h1{
+            animation: slideFadeIn 1.5s ease-in-out;
+        }
+      </style>
 <header class="text-center">
     <h1>What You Need to Know Before Starting Ausbildung in Germany</h1>
     <p class="lead">Your comprehensive guide to preparing for Ausbildung in Germany.</p>
