@@ -972,15 +972,13 @@ window.addEventListener("click", function (event) {
     
             <!-- Buttons Section -->
             <div class="button-container">
-                <a href="{% url 'lpapp:blog' %}">
-                <button class="action-button">BLOG</button>
-                </a>
-                <a href="{% url 'lpapp:canada' %}">
-                    <button class="action-button">IMMIGRATION</button>
-                    </a>
-                    <a href="{% url 'lpapp:studycanada' %}">
-                        <button class="action-button">COUNTRIES</button>
-                        </a>
+                
+                <button class="action-button"><a href="{% url 'lpapp:blog' %}">BLOG</a>
+                </button>
+                <button class="action-button"><a href="{% url 'lpapp:canada' %}">IMMIGRATION</a>
+                </button>
+                <button class="action-button"><a href="{% url 'lpapp:studycanada' %}">COUNTRIES</a>
+                </button>
                 <button class="action-button locationLink">LOCATION</button>
             </div>
         </div>
