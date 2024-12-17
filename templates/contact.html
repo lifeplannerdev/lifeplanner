@@ -56,7 +56,7 @@
             transition: transform 0.3s ease-in-out;
         }
         .contact-details{
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+          
           font-size:14px;
 
         }
@@ -153,6 +153,7 @@ form {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    
 }
 
 form input, form textarea {
@@ -452,7 +453,7 @@ form span a:hover {
         <div class="contact-section">
             <!-- Contact Details -->
             <div class="contact-details">
-                <h3>CONTACT INFORMATION</h3>
+                <h3 style="font-weight: bold;">CONTACT INFORMATION</h3>
 
                 
 
@@ -496,10 +497,10 @@ form span a:hover {
         <input type="submit" value="Send" />
     </form>
     <div style="display: flex;justify-content: center;align-items: center;height:200px;margin-top: -20px;border-radius: 20px;">
-        <img src="https://www.svgrepo.com/show/424905/instagram-logo-facebook.svg" style="height:75px;margin:5px;">
-        <img src="https://www.svgrepo.com/show/494326/youtube-rounded.svg" style="height:65px;margin:5px;">
-        <img src="https://www.svgrepo.com/show/340605/logo-linkedin.svg" style="height:87px;margin:5px;">
-        <img src="https://www.svgrepo.com/show/494321/twitter-rounded.svg" style="height:65px;margin:5px;">
+        <i class="fa-brands fa-twitter" style="font-size: 3.5em;margin: 7px;color:#17498c;"></i>
+        <i class="fa-brands fa-instagram" style="font-size: 3.5em;margin: 7px;color:#17498c;"></i>
+        <i class="fa-brands fa-facebook" style="font-size: 3.5em;margin: 7px;color:#17498c;"></i>
+        <i class="fa-brands fa-linkedin" style="font-size: 3.5em;margin: 7px;color:#17498c;"></i>
     </div>
 </div>
 </div>
@@ -609,6 +610,10 @@ text-align: center;
       .profile-card {
           flex: 0 0 85%;
       }
+      .profile-heading{
+        margin-top: -70px;
+      }
+      
   }
 </style>
 <div class="profile-cards-wrapper">
