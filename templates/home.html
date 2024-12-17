@@ -671,8 +671,8 @@
             </div>
         </div>
     </div>
-    <div class="modal1" id="popupModal">
-        <div class="modal-content1">
+    <div class="modal1" id="popupModal" >
+        <div class="modal-content1" >
             <span class="close-btn1" id="closeModal">&times;</span>
             <img src="/static/webinar.jpg" alt="Ad Poster" class="modal-poster1">
             <form id="enrollForm1" method="post">
@@ -684,7 +684,7 @@
                     <div class="error" style="color: red;">{{ enrollment_form.name.errors.0 }}</div>
                 {% endif %}
                 
-                <!-- Custom input for Email -->
+                
                 <input type="text" name="mail" placeholder="Your Email" required style="border-radius: 30px;">
 {% if enrollment_form.mail.errors %}
     <div class="error" style="color: red;">{{ enrollment_form.mail.errors.0 }}</div>
