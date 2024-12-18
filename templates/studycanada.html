@@ -253,13 +253,13 @@
         
         
     </header>
-
+    
     <div style="display:flex;justify-content: center;align-items: center;">
         <tab class="nav justify-content-center bg-primary nav-tab shadow">
-            <a class="nav-link text-white" href="#" onclick="switchCountry('canada')">Canada</a>
-            <a class="nav-link text-white" href="#" onclick="switchCountry('germany')">Germany</a>
-            <a class="nav-link text-white" href="#" onclick="switchCountry('poland')">Poland</a>
-            <a class="nav-link text-white" href="#" onclick="switchCountry('bulgaria')">Bulgaria</a>
+            <a class="nav-link text-white" href="#" onclick="switchCountry('canada', this)" id="tab-canada">Canada</a>
+            <a class="nav-link text-white" href="#" onclick="switchCountry('germany', this)" id="tab-germany">Germany</a>
+            <a class="nav-link text-white" href="#" onclick="switchCountry('poland', this)" id="tab-poland">Poland</a>
+            <a class="nav-link text-white" href="#" onclick="switchCountry('bulgaria', this)" id="tab-bulgaria">Bulgaria</a>
         </tab>
     </div>
 
@@ -687,11 +687,11 @@
     <p>Poland offers an affordable and high-quality education, making it a great choice for international students. Whether you're pursuing a degree in engineering, business, or healthcare, Poland's universities provide excellent opportunities to grow academically and professionally in a vibrant cultural setting.</p>
 </div>
 <script>
-    function switchCountry(country) {
+    function switchCountry(country, tabElement) {
         // Hide all country content
         const allContent = document.querySelectorAll('.country-content');
         allContent.forEach(content => content.style.display = 'none');
-        
+
         // Show the selected country content
         const selectedContent = document.getElementById(country);
         if (selectedContent) {
@@ -705,8 +705,23 @@
         } else {
             headerTitle.textContent = 'EUROPEAN COUNTRIES';
         }
+
+        // Update the active tab style
+        const tabs = document.querySelectorAll('.nav-link');
+        tabs.forEach(tab => tab.classList.remove('active-tab'));
+
+        // Apply active class to the clicked tab
+        tabElement.classList.add('active-tab');
     }
 </script>
+
+<style>
+    .active-tab {
+        background-color: #0057b35b;
+        border-radius: 30px;
+        font-weight: bold;
+    }
+</style>
     <footer>
         <p>Lifeplanner Studies & Opportunities (P) Ltd.</p>
         <p>2nd Floor, Thevarolil Building, Near Darsana IELTS Academy, Sastri Road, Kottayam-1.</p>
