@@ -645,9 +645,9 @@ Student loans.
                             </div>
                             <div class="footer-social-icon mb-4">
                                 <span>Follow us</span>
-                                <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
-                                <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
-                                <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                                <a href="https://www.instagram.com/lifeplannerstudies/?hl=en"><i class="fab fa-facebook-f bg-light text-dark"></i></a>
+                                <a href="#"><i class="fab fa-twitter bg-light text-dark"></i></a>
+                                <a href="#"><i class="fab fa-instagram bg-light text-dark"></i></a>
                             </div>
                         </div>
                     </div>
@@ -657,12 +657,12 @@ Student loans.
                                 <h4>Top Links</h4>
                             </div>
                             <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">about</a></li>
-                                <li><a href="#">services</a></li>
-                                <li><a href="#">portfolio</a></li>
-                                <li><a href="#">Contact</a></li>
-                                <li><a href="#">About us</a></li>
+                                <li><a href="{% url 'lpapp:home' %}">Home</a></li>
+                                <li><a href="{% url 'lpapp:studycanada' %}">Countries</a></li>
+                                <li><a href="{% url 'lpapp:service' %}">services</a></li>
+                                <li><a href="{% url 'lpapp:blog' %}">Blog</a></li>
+                                <li><a href="{% url 'lpapp:contact' %}">Contact Us</a></li>
+                                <li><a href="{% url 'lpapp:about' %}">About us</a></li>
                                 
                             </ul>
                         </div>

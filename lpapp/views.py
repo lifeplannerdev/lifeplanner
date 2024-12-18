@@ -1,7 +1,7 @@
 from django.http import JsonResponse
 from django.shortcuts import render,redirect
 from .forms import AppointmentForm,WebinarForm  
-from .models import Team
+from .models import Team,Appointment
 from .forms import TeamForm,ReviewForm
 from .models import Team, Review
 from django.shortcuts import get_object_or_404
@@ -98,7 +98,28 @@ def albums(request):
     return render(request,"albums.html")
 
 def contact(request):
-    return render(request,"contact.html")   
+    if request.method == 'POST':
+        # Retrieve data from the form
+        firstname = request.POST.get('firstname')
+        lastname = request.POST.get('lastname')
+        email = request.POST.get('email')
+        phone_number = request.POST.get('phone_number')
+        message = request.POST.get('message')
+
+        # Save the data into the Appointment model
+        try:
+            appointment = Appointment.objects.create(
+                firstname=firstname,
+                lastname=lastname,
+                email=email,
+                phone_number=phone_number,
+                message=message
+            )
+            return JsonResponse({'success': True, 'message': 'Your appointment has been saved!'})
+        except Exception as e:
+            return JsonResponse({'success': False, 'error': str(e)})
+    
+    return render(request, "contact.html")
 
 def canada(request):
     return render(request,"canada.html")
