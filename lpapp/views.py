@@ -137,3 +137,6 @@ def blog2(request):
 
 def blog3(request):
     return render(request,"blog3.html")
+
+def demo(request):
+    return render(request,"demo.html")
