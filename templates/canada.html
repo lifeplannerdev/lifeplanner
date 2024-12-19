@@ -277,26 +277,28 @@
     
 </header>
 <style>
-  .effect3d {
+  .blurIn {
             color: #fff;
             
-            animation-name: effect3d;
-            animation-duration: 4s;
-            animation-iteration-count: infinite;
+            animation-name: blurIn;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
             animation-direction: alternate;
         }
-  .effect3d { animation-name: effect3d }
-@keyframes effect3d {
-    to {
-        text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, .1), 0 0 5px rgba(0, 0, 0, .1), 0 1px 3px rgba(0, 0, 0, .3), 0 3px 5px rgba(0, 0, 0, .2), 0 5px 10px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .2), 0 20px 20px rgba(0, 0, 0, .15)
+        .blurIn { animation-name: blurIn }
+@keyframes blurIn {
+    from {
+        filter: blur(20px);
+        opacity: 0;
     }
 }
+
 </style>
 <div style="background-color: #852f2f;
 background-image: 
     radial-gradient(at 47% 33%, hsl(7.64, 77%, 40%) 0, transparent 59%), 
     radial-gradient(at 82% 65%, hsl(359.15, 89%, 48%) 0, transparent 55%);border-radius: 20;padding:20px;margin-bottom: 60px;">
-        <h1 class="text-center text-white effect3d">IMMIGRATE TO CANADA</h1>
+        <h1 class="text-center text-white blurIn">IMMIGRATE TO CANADA</h1>
     </div>
     <style>
       /* Define the fade-in-up animation */
