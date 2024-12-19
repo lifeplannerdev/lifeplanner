@@ -54,12 +54,14 @@
         h2 {
             font-weight: 700;
             letter-spacing: 1px;
+            animation: slideFadeIn 1.5s ease-in-out;
         }
 
         h3 {
             font-weight: 700;
             color: #00509e;
             margin-top: 1.5rem;
+            
         }
 
         ul {
@@ -260,6 +262,17 @@
     
     }
 
+    @keyframes slideFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
     </style>
     <nav class="navbar navbar-expand-lg navbar-dark">
         <img src="/static/LPsymbol.png" style="height:40px;width:90px;">
@@ -272,12 +285,13 @@
 
         <div class="collapse navbar-collapse" id="navbarNav" >
             <ul class="navbar-nav ml-auto">
+              <li class="nav-item ml-4"><a class="nav-link" href="{% url 'lpapp:home' %}">Home</a></li>
                 <li class="nav-item ml-4"><a class="nav-link" href="{% url 'lpapp:service' %}">Services</a></li>
                 <li class="nav-item ml-4"><a class="nav-link" href="{% url 'lpapp:canada' %}">Immigration</a></li>
                 <li class="nav-item ml-4"><a class="nav-link" href="{% url 'lpapp:studycanada' %}">University</a></li>
                 <li class="nav-item ml-4"><a class="nav-link" href="{% url 'lpapp:blog' %}">Blog</a></li>
                 <li class="nav-item ml-4"><a class="nav-link" href="{% url 'lpapp:contact' %}">Contact Us</a></li>
-                <li class="nav-item ml-4 locationLink"><a class="nav-link" href="#" >Location</a></li>
+                
 
             </ul>
         </div>
@@ -305,32 +319,113 @@
     <header>
         <h2>ABOUT US</h2>
     </header>
+    <style>
+      /* Define the fade-in-up animation */
+      @keyframes fadeInUp {
+          from {
+              opacity: 0; /* Start fully transparent */
+              transform: translateY(50px); /* Start slightly below */
+          }
+          to {
+              opacity: 1; /* End fully visible */
+              transform: translateY(0); /* End at the original position */
+          }
+      }
+      
+      /* Add a fallback for reusable classes */
+      .overlay {
+          animation: fadeInUp 1.5s ease-out; /* Duration and timing */
+      }
+      </style>
+    <div class="container content" style="animation: fadeInUp 1.5s ease-out;">
+        <p><span class="highlight">Life Planner</span> Established in 2012, Life Planner has grown from a modest start-up to become a trusted and well-respected educational facilitator among study abroad consultants in Kottayam.
+ 
+Recognised with ISO certification, we have earned a reputation for providing trustworthy and personalised services.
+</p>
+<p>
+  At Life Planner, we provide individualized counseling based on each student's distinct talents, interests, and study skills, ensuring a smooth transition through the admission and visa processes. Our experienced team provides admission support for medical, engineering, paramedical, nursing, IT, technical, management, and various other academic streams across globally renowned universities and institutions. Students can explore undergraduate, postgraduate, diploma, and certificate programs in almost all countries.
 
-    <div class="container content">
-        <h2 class="text-primary border-bottom pb-2">Why Life Planner?</h2>
-        <p><span class="highlight">Life Planner</span>, from its modest start-up in 2012, has grown into a reputed and well-respected educational facilitator among study abroad consultants in Kottayam, Kerala. Accredited with an ISO certification, our trustworthy service offers detailed counseling for each student throughout admission and visa processing, catering to their individual talent, interests, and study skills.</p>
+</p>
+<p>
+  To ensure students achieve excellent IELTS or German language scores, we provide expert training at our dedicated academy. International students also benefit from our assistance in finding employment after graduation, supported by our alumni network and Immigration Consultant Office. Our commitment does not end once students reach their destination; we continue to provide guidance and support, reinforcing our standing as one of the leading overseas education consultants in Kottayam.
 
-        <p>Our team provides admission guidance for Medical, Engineering, Paramedical, Nursing, IT, Technical, Management, and multiple other academic streams in reputed universities and institutions worldwide. Options include undergraduate and postgraduate programs, certificate programs, and diploma courses in almost all countries. Our own Academy ensures you achieve excellent IELTS/German language scores through expert training.</p>
+</p>
+<p>
+  Life Planner Studies and Opportunities Pvt Ltd operates from its headquarters in Kottayam and its corporate office in Cochin. We ensure our students settle comfortably upon arrival, offering airport pickup and accommodation assistance. This is achieved through close coordination with university or college officials and our former students who are now successfully settled abroad. The wholehearted participation of our alumni is a testament to the exceptional service they received during their journey with us. This enduring trust has positioned Life Planner as the top study abroad consultant in Kottayam, Kerala.
 
-        <p>We assist international students in finding jobs post-studies through our Alumnus and Immigration Consultant Office. Life Planner continues to thrive as one of the leading overseas education consultants in Kottayam, providing support even after students reach abroad.</p>
+</p>
 
-        <h3>Our Services</h3>
+        <h2 class="text-primary border-bottom pb-2">Benefits for Life Planner student</h2>
         <ul>
-            <li>Expert advice to match your interests with the best programs.</li>
-            <li>Personalized care and attention throughout all stages of processing.</li>
-            <li>Frequent spot admissions/seminar sessions at our offices.</li>
-            <li>Scholarship/fee discounts from selected institutions based on criteria.</li>
-            <li>Free airport pickup and accommodation assistance.</li>
-            <li>Free visa guidance and education loan assistance.</li>
-            <li>Forex services and competitive air ticketing rates.</li>
-            <li>Access to references from students who studied abroad through us.</li>
-            <li>100% transparent services.</li>
+          <li>
+            Expert advice to match your interests with the best programs
+          </li>
+          <li>
+            Careful attention at every stage of the admission process
+          </li>
+          <li>
+            Frequent spot admission and seminar sessions at our offices
+
+          </li>
+          <li>
+            Scholarship and fee discounts from selected institutions (based on eligibility)
+          </li>
+          <li>
+            Free airport pickup and accommodation support
+          </li>
+          <li>
+            Free visa guidance
+          </li>
+          <li>
+            Assistance with education loans
+          </li>
+          <li>
+            Competitive forex and air ticketing services
+          </li>
+          <li>
+            Access to references from our successful students abroad
+          </li>
+          <li>
+            100% transparent and reliable services
+          </li>
+          
         </ul>
+        
 
-        <h3>Our Commitment</h3>
-        <p><strong>Life Planner Studies and Opportunities Pvt Ltd</strong>, headquartered in Kottayam with a corporate office in Cochin, is dedicated to ensuring our students' smooth transition abroad. We coordinate with university/college officials and our former students, who are well-settled, to provide airport pickups and stay arrangements. This collective effort is made possible by the excellent service we have consistently delivered over the years.</p>
+        <h3>Foreign Languages Academy Gurukulam (F.L.A.G.),</h3>
+       <p>
+        the language wing of Life Planner Studies & Opportunities Pvt. Ltd., was established in 2018 as a premier language institute in Kerala. With over six years of expertise, F.L.A.G. has become a leader in German language training. As the only authorised German Skill Development Centre in Kerala, we collaborate with German companies to deliver industry-specific training, equipping students with the language proficiency needed for international opportunities.
 
-        <p>Join Life Planner, and let us help you achieve your academic and professional aspirations with unparalleled guidance and support.</p>
+       </p>
+       <h3>Chairman’s Message</h3>
+       <p>
+        Overseas education can seem overwhelming for students and their parents, not because of its complexity, but because it offers an abundance of opportunities and choices. Selecting the right program, university, and destination is often a challenging decision for aspiring students, with the risk of being misled.
+
+       </p>
+       <p>
+        Think about it—we choose clothes based on our size and preferred colour, food according to our taste, and even our perspective on a subject is shaped by personal experiences and interests. In short, every decision we make is uniquely ours, tailored to fit who we are. So why, when it comes to education, do so many feel pressured to follow trends? Why do we rush to join the crowd, pursuing programs, universities, or countries that may not truly align with our dreams and abilities?
+
+       </p>
+       <p>
+        Every student has their own vision, passion, skills, and talents. Education should serve as a bridge to enhance this vision and bring those dreams to life. At Life Planner, we understand this better than anyone. We are well-connected with a network of world-class universities, colleges, and B-schools across the globe, enabling us to offer personalised solutions for each student.
+
+       </p>
+       <p>
+        Our strategy is simple yet effective: we provide tailor-made guidance based on your preferences, strengths, and aspirations. This process is carried out through our highly trained and experienced counsellors, who not only guide you towards the right academic options but also suggest clear and legal pathways for immigration.
+
+       </p>
+       <p> 
+        We are committed to ensuring that every student receives an uncompromised quality of education and unbiased counselling, so they can make well-informed decisions. To maintain this promise, I, as the Chairman of Life Planner, personally visit many of the universities and institutions we recommend. I do this to verify their facilities, educational standards, and post-study opportunities, ensuring they meet the expectations we set for our students.
+
+       </p>
+       <p>
+        Life Planner was founded with a true vision—to transform the way students experience overseas education. From the moment you join hands with us, your journey is carefully planned, step by step, so that you can focus on achieving your goals without any uncertainty.
+
+       </p>
+       <p>
+        With Life Planner, you are not just choosing a consultancy; you are choosing a partner who is dedicated to helping you turn your dreams into reality.
+
+       </p>
     </div>
     <footer class="footer-section">
         <div class="container">

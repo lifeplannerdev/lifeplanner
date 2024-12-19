@@ -276,19 +276,52 @@
     <div class="overlay"></div>
     
 </header>
+<style>
+  .effect3d {
+            color: #fff;
+            
+            animation-name: effect3d;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+  .effect3d { animation-name: effect3d }
+@keyframes effect3d {
+    to {
+        text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, .1), 0 0 5px rgba(0, 0, 0, .1), 0 1px 3px rgba(0, 0, 0, .3), 0 3px 5px rgba(0, 0, 0, .2), 0 5px 10px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .2), 0 20px 20px rgba(0, 0, 0, .15)
+    }
+}
+</style>
 <div style="background-color: #852f2f;
 background-image: 
     radial-gradient(at 47% 33%, hsl(7.64, 77%, 40%) 0, transparent 59%), 
     radial-gradient(at 82% 65%, hsl(359.15, 89%, 48%) 0, transparent 55%);border-radius: 20;padding:20px;margin-bottom: 60px;">
-        <h1 class="text-center text-white">IMMIGRATE TO CANADA</h1>
+        <h1 class="text-center text-white effect3d">IMMIGRATE TO CANADA</h1>
     </div>
-    <section class="section">
+    <style>
+      /* Define the fade-in-up animation */
+      @keyframes fadeInUp {
+          from {
+              opacity: 0; /* Start fully transparent */
+              transform: translateY(50px); /* Start slightly below */
+          }
+          to {
+              opacity: 1; /* End fully visible */
+              transform: translateY(0); /* End at the original position */
+          }
+      }
+      
+      
+      
+      </style>
+    <section class="section" style="animation:fadeInUp 1.5s ease-out;">
         <div class="container">
             <h2 class=" mb-4" style="font-size: 32px;
             font-weight: bold;
             background: linear-gradient(135deg, #5f9cad, #8080bc);
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;">Immigration to Canada: Your Complete Guide</h2>
+            -webkit-text-fill-color: transparent;
+            ">Immigration to Canada: Your Complete Guide</h2>
             <p class="lead ">Canada remains one of the most sought-after destinations for individuals and families looking to build a new life abroad. Known for its high standard of living, economic opportunities, and welcoming multicultural society, Canada offers various immigration pathways to meet the needs of skilled workers, entrepreneurs, students, and families.</p>
             <p class="lead ">This blog will explore why Canada is an attractive option, the benefits of immigrating, key immigration pathways, and recent policy changes that applicants should be aware of.</p>        
         </div>
