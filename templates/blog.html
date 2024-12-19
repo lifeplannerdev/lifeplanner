@@ -227,14 +227,7 @@
         display: block;
         
     }
-    
-    }
-
-    @media (max-width: 767px) {
-                .icon-menu {
-                    display: flex; /* Show the icon only on mobile */
-                }
-                .bar {
+    .bar {
   position: relative;
   height: 5px;
   width: 100%;
@@ -275,11 +268,18 @@
   --rotate-bar-one: 45deg;
   --rotate-bar-three: -45deg;
 }
+    }
+
+    @media (max-width: 767px) {
+                .icon-menu {
+                    display: flex; /* Show the icon only on mobile */
+                }
+                
             }
     
     .bar {
       position: relative;
-      height: var(--height-bar);
+      height: 3.2px;
       width: 100%;
       border-radius: .5rem;
       background-color: #d6d6d6;
