@@ -131,7 +131,7 @@
   --rotate-bar-one: 45deg;
   --rotate-bar-three: -45deg;
 }
-@media (max-width: 1200px) {
+@media (min-width: 768px) and (max-width: 1024px) {
     .icon-menu{
         display: block;
         
@@ -977,9 +977,14 @@ window.addEventListener("click", function (event) {
                     <p class="stat-label">Students Placed</p>
                 </div>
             </div>
+            <div style="display:flex;justify-content: center;align-items: center;">
+                <button style="width:70%;height: 50px;border-radius: 30px;background: linear-gradient(135deg, #9e9ed4, #80bccd);color:white;border:none;margin:40px;">
+                    Contact Us
+                </button>
+            </div>
     
             <!-- Buttons Section -->
-            <div class="button-container">
+            <!-- <div class="button-container">
                 
                 <button class="action-button"><a href="{% url 'lpapp:blog' %}" style="text-decoration: none;color:rgb(22, 100, 173)";>BLOG</a>
                 </button>
@@ -988,7 +993,7 @@ window.addEventListener("click", function (event) {
                 <button class="action-button"><a href="{% url 'lpapp:studycanada' %}" style="text-decoration: none;color:rgb(22, 100, 173)";">COUNTRIES</a>
                 </button>
                 <button class="action-button locationLink">LOCATION</button>
-            </div>
+            </div> -->
         </div>
     </div>
     <script>
