@@ -42,3 +42,12 @@ class Review(models.Model):
 
     def __str__(self):
         return f"Review by {self.name} for {self.team_member.name}"
+    
+class Immigration(models.Model):
+    candidate = models.CharField(max_length=250)
+    phno = models.BigIntegerField()  # Use BigIntegerField for larger phone numbers
+    field = models.CharField(max_length=250)
+    exp = models.IntegerField()
+
+    def __str__(self):
+        return self.candidate

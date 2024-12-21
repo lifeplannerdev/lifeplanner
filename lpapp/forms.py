@@ -1,5 +1,5 @@
 from django import forms
-from .models import Appointment
+from .models import Appointment,Immigration
 from .models import Webinar
 from .models import Team
 from .models import Review
@@ -26,3 +26,9 @@ class TeamForm(forms.ModelForm):
     class Meta:
         model = Team
         fields = ['name', 'phone', 'img','bio','post'] 
+
+
+class CandidateForm(forms.ModelForm):
+    class Meta:
+        model = Immigration
+        fields = '__all__'
