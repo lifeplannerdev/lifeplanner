@@ -347,11 +347,10 @@
           color: #007bff;
         }
       </style>
-    </head>
-    <body>
+    
     
       <div class="dropdown">
-        <button class="dropdown-btn" id="dropdownBtn" onclick="toggleDropdown()">Canada</button>
+        <button class="dropdown-btn" id="dropdownBtn" onclick="toggleDropdown()">Countries</button>
         <div class="dropdown-content" id="dropdownContent">
           <a href="#" onclick="switchCountry('canada')">Canada</a>
           <a href="#" onclick="switchCountry('uk')">UK</a>
@@ -667,6 +666,102 @@
     <br><br>
     <p>Lifeplanner is here to guide you through the entire process. From understanding available resources and navigating policies to exploring pathways for work and residency, we ensure you make informed decisions for a successful academic journey. Let us help you plan your studies, manage your budget, and seize this exciting opportunity to grow both academically and personally.</p>
     </div>
+
+    <div id="newzealand" class="country-content container bg-white mt-4 p-4 rounded shadow fade-in" style="display: none;">
+        <h3>Studies in New Zealand</h3>
+        <p>New Zealand offers a diverse and welcoming environment for international students, combining high-quality education with vibrant cultural experiences. Here's a concise guide to studying and working in New Zealand, tailored for prospective students.</p>
+        <br><br>
+        <h3>Why Choose New Zealand?</h3>
+        <ul>
+          <li><strong>Quality Education:</strong> New Zealand's education system is renowned for its quality and innovation, with universities consistently ranking among the world's best.</li>
+          <li><strong>Cultural Diversity:</strong> Experience a rich blend of cultures, including the indigenous Māori heritage.</li>
+          <li><strong>Safety:</strong> Known for its low crime rates and political stability, New Zealand provides a secure environment for students.</li>
+        </ul>
+        <br><br>
+        <h3>Educational Institutions</h3>
+        <p>New Zealand's education system comprises universities, institutes of technology and polytechnics (ITPs), and private training establishments (PTEs).</p>
+        <br><br>
+        <table border="1" cellpadding="20" >
+          <thead>
+            <tr>
+              <th>Institution Type</th>
+              <th>Number</th>
+              <th>Notable Institutions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Universities</td>
+              <td>8</td>
+              <td>University of Auckland, University of Otago, Victoria University of Wellington</td>
+            </tr>
+            <tr>
+              <td>ITPs</td>
+              <td>16</td>
+              <td>Auckland Institute of Studies, Southern Institute of Technology</td>
+            </tr>
+            <tr>
+              <td>PTEs</td>
+              <td>700+</td>
+              <td>Varying specializations across sectors</td>
+            </tr>
+          </tbody>
+        </table>
+        <br><br>
+        <h3>Popular Study Areas</h3>
+        <ul>
+          <li>Business and Management</li>
+          <li>Information Technology</li>
+          <li>Engineering</li>
+          <li>Health Sciences</li>
+          <li>Environmental Studies</li>
+        </ul>
+        <br><br>
+        <h3>Tuition Fees and Living Costs</h3>
+        <p><strong>Tuition Fees:</strong> Vary by program and institution; undergraduate degrees range from NZD 22,000 to NZD 32,000 per year, while postgraduate degrees range from NZD 26,000 to NZD 37,000 per year.</p>
+        <p><strong>Living Costs:</strong> Estimated at NZD 15,000 to NZD 20,000 per year, covering accommodation, food, transportation, and other expenses.</p>
+        <br><br>
+        <h3>Scholarships</h3>
+        <p>Various scholarships are available for international students, including:</p>
+        <ul>
+          <li><strong>New Zealand Scholarships:</strong> Offered by the government for students from eligible countries.</li>
+          <li><strong>University-Specific Scholarships:</strong> Each university provides its own range of scholarships based on merit and need.</li>
+        </ul>
+        <br><br>
+        <h3>Work Opportunities During Studies</h3>
+        <p><strong>Part-Time Work:</strong> International students can work up to 20 hours per week during semesters and full-time during scheduled breaks.</p>
+        <p><strong>Minimum Wage:</strong> As of 2024, the minimum wage is NZD 22.70 per hour.</p>
+        <br><br>
+        <h3>Post-Study Work Opportunities</h3>
+        <p><strong>Post-Study Work Visa:</strong> Graduates can apply for a post-study work visa, valid for up to three years, depending on the qualification and location of study.</p>
+        <p><strong>Skilled Employment:</strong> Opportunities exist in sectors like IT, engineering, healthcare, and construction.</p>
+        <br><br>
+        <h3>Application Process</h3>
+        <ul>
+          <li>Choose a Program and Institution: Research and select based on your academic interests and career goals.</li>
+          <li>Check Entry Requirements: Ensure you meet academic and English language proficiency standards.</li>
+          <li>Apply Online: Submit applications directly through the institution's website.</li>
+          <li>Obtain a Student Visa: Upon acceptance, apply for a student visa through Immigration New Zealand.</li>
+        </ul>
+        <br><br>
+        <h3>Accommodation Options</h3>
+        <ul>
+          <li><strong>On-Campus Housing:</strong> Halls of residence or dormitories.</li>
+          <li><strong>Off-Campus Housing:</strong> Shared apartments or homestays.</li>
+        </ul>
+        <br><br>
+        <h3>Health Insurance</h3>
+        <p>International students must have comprehensive health insurance for the duration of their stay.</p>
+        <br><br>
+        <h3>Cultural Tips</h3>
+        <ul>
+          <li><strong>Māori Culture:</strong> Respect and engage with Māori customs and traditions.</li>
+          <li><strong>Social Etiquette:</strong> Punctuality and politeness are valued.</li>
+        </ul>
+        <br><br>
+        <h3>Conclusion</h3>
+        <p>Embarking on an educational journey in New Zealand offers a blend of academic excellence and enriching life experiences. Plan diligently, and make the most of the opportunities that await. Lifeplanner will be there to guide you every step of the way, from selecting the right institution to navigating the visa process and settling in your new home.</p>
+      </div>
 <script>
     function switchCountry(country, tabElement) {
         // Hide all country content
@@ -680,12 +775,7 @@
         }
 
        
-        // Update the active tab style
-        const tabs = document.querySelectorAll('.nav-link');
-        tabs.forEach(tab => tab.classList.remove('active-tab'));
-
-        // Apply active class to the clicked tab
-        tabElement.classList.add('active-tab');
+       
     }
 </script>
 <footer class="footer-section">
