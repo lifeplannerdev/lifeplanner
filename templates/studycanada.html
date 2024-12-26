@@ -309,7 +309,6 @@
           cursor: pointer;
           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
           margin-top: -1px;
-
         }
     
         .dropdown-btn:hover {
@@ -324,11 +323,9 @@
           background: linear-gradient(135deg, #5f9cad, #8080bc);
           min-width: 160px;
           box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-          
           z-index: 1;
           border-top-right-radius: 10px;
           border-bottom-right-radius: 10px;
-          
         }
     
         /* Dropdown menu links */
@@ -349,17 +346,13 @@
           background-color: #f1f1f1;
           color: #007bff;
         }
-    
-        /* Show the dropdown content on hover */
-        .dropdown:hover .dropdown-content {
-          display: block;
-        }
       </style>
     </head>
     <body>
+    
       <div class="dropdown">
-        <button class="dropdown-btn" id="dropdownBtn">Canada</button>
-        <div class="dropdown-content">
+        <button class="dropdown-btn" id="dropdownBtn" onclick="toggleDropdown()">Canada</button>
+        <div class="dropdown-content" id="dropdownContent">
           <a href="#" onclick="switchCountry('canada')">Canada</a>
           <a href="#" onclick="switchCountry('uk')">UK</a>
           <a href="#" onclick="switchCountry('australia')">Australia</a>
@@ -373,8 +366,25 @@
           const dropdownBtn = document.getElementById("dropdownBtn");
           dropdownBtn.textContent = countryName; // Update button text
           console.log(`Switched to: ${countryName}`); // Log the change for debugging
+          toggleDropdown(); // Close the dropdown after selection
         }
+    
+        // Function to toggle the visibility of the dropdown menu
+        function toggleDropdown() {
+          const dropdownContent = document.getElementById("dropdownContent");
+          dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
+        }
+    
+        // Close the dropdown if clicked outside
+        window.onclick = function(event) {
+          const dropdownContent = document.getElementById("dropdownContent");
+          const dropdownBtn = document.getElementById("dropdownBtn");
+          if (!dropdownBtn.contains(event.target) && !dropdownContent.contains(event.target)) {
+            dropdownContent.style.display = "none";
+          }
+        };
       </script>
+    
       
     
     <div id="canada" class="country-content container bg-white mt-4 p-4 rounded shadow fade-in">
