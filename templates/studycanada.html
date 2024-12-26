@@ -46,6 +46,7 @@
             border-radius: 20px;
             margin-top: 20px;
             background: linear-gradient(135deg, #5f9cad, #8080bc);
+            display:flex;
            
         }
 
@@ -278,6 +279,10 @@
             header h2{
                 animation: slideFadeIn 1.5s ease-in-out;
             }
+            h3{
+                font-weight: bold;
+                color:#5f9cad;
+            }
           </style>
     <header>
         <h2 style="margin-top: 70px;" id="header-title">ENGLISH SPEAKING COUNTRIES</h2>
@@ -286,19 +291,92 @@
         
     </header>
     <style>
-        h3{
-           color:#5f9cad;
-           font-weight: bold;
+        /* Dropdown container styling */
+        .dropdown {
+          position: relative;
+          display: inline-block;
         }
-    </style>
-    <div style="display:flex;justify-content: center;align-items: center;">
-        <tab class="nav justify-content-center bg-primary nav-tab shadow">
-            <a class="nav-link text-white active-tab" onclick="switchCountry('canada', this)" id="tab-canada">Canada</a>
-            <a class="nav-link text-white" onclick="switchCountry('uk', this)" id="tab-germany">UK</a>
-            <a class="nav-link text-white" onclick="switchCountry('australia', this)" id="tab-poland">Australia</a>
-            <a class="nav-link text-white" onclick="switchCountry('bulgaria', this)" id="tab-bulgaria">New Zeland</a>
-        </tab>
-    </div>
+    
+        /* Dropdown button styling */
+        .dropdown-btn {
+          background: linear-gradient(135deg, #5f9cad, #8080bc);
+          color: white;
+          padding: 10px 20px;
+          font-size: 20px;
+          border: none;
+          font-weight: bold;
+          border-bottom-right-radius: 15px;
+          cursor: pointer;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          margin-top: -1px;
+
+        }
+    
+        .dropdown-btn:hover {
+          background-color: #0056b3;
+        }
+    
+        /* Dropdown menu styling */
+        .dropdown-content {
+          display: none;
+          margin-top: 10px;
+          position: absolute;
+          background: linear-gradient(135deg, #5f9cad, #8080bc);
+          min-width: 160px;
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+          
+          z-index: 1;
+          border-top-right-radius: 10px;
+          border-bottom-right-radius: 10px;
+          
+        }
+    
+        /* Dropdown menu links */
+        .dropdown-content a {
+          color: #ffffff;
+          padding: 10px 20px;
+          text-decoration: none;
+          display: block;
+          font-weight: bold;
+          border-bottom: 1px solid #e6e6e6;
+        }
+    
+        .dropdown-content a:last-child {
+          border-bottom: none;
+        }
+    
+        .dropdown-content a:hover {
+          background-color: #f1f1f1;
+          color: #007bff;
+        }
+    
+        /* Show the dropdown content on hover */
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="dropdown">
+        <button class="dropdown-btn" id="dropdownBtn">Canada</button>
+        <div class="dropdown-content">
+          <a href="#" onclick="switchCountry('canada')">Canada</a>
+          <a href="#" onclick="switchCountry('uk')">UK</a>
+          <a href="#" onclick="switchCountry('australia')">Australia</a>
+          <a href="#" onclick="switchCountry('newzealand')">New Zealand</a>
+        </div>
+      </div>
+    
+      <script>
+        // Function to switch country and update dropdown text
+        function switchCountry(countryName) {
+          const dropdownBtn = document.getElementById("dropdownBtn");
+          dropdownBtn.textContent = countryName; // Update button text
+          console.log(`Switched to: ${countryName}`); // Log the change for debugging
+        }
+      </script>
+      
+    
     <div id="canada" class="country-content container bg-white mt-4 p-4 rounded shadow fade-in">
         <h3 class="border-bottom pb-2">Study in Canada: Your Gateway to Quality Education and Bright Career Opportunities</h3>
         <p>Canada has steadily become one of the top destinations for students seeking quality education, global exposure, and exceptional career opportunities. Known for its welcoming culture, advanced education system, and stunning landscapes, Canada offers a perfect mix of learning and living. Whether you are interested in undergraduate, postgraduate, or professional courses, Canada has something for everyone. Let us explore why Canada is the preferred choice for international students, what courses are popular, part-time work opportunities, and new immigration rules that positively shape the future for aspiring students.</p>
