@@ -291,103 +291,115 @@
         
     </header>
     <style>
-        /* Dropdown container styling */
-        .dropdown {
-          position: relative;
-          display: inline-block;
-        }
-    
-        /* Dropdown button styling */
-        .dropdown-btn {
-          background: linear-gradient(135deg, #5f9cad, #8080bc);
-          color: white;
-          padding: 10px 20px;
-          font-size: 20px;
-          border: none;
-          font-weight: bold;
-          border-bottom-right-radius: 15px;
-          cursor: pointer;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-          margin-top: -1px;
-        }
-    
-        .dropdown-btn:hover {
-          background-color: #0056b3;
-        }
-    
-        /* Dropdown menu styling */
-        .dropdown-content {
-          display: none;
-          margin-top: 4px;
-          position: absolute;
-          background: linear-gradient(135deg, #5f9cad, #8080bc);
-          min-width: 160px;
-          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-          z-index: 1;
-          border-top-right-radius: 10px;
-          border-bottom-right-radius: 10px;
-        }
-    
-        /* Dropdown menu links */
-        .dropdown-content a {
-          color: #ffffff;
-          padding: 10px 20px;
-          text-decoration: none;
-          display: block;
-          font-weight: bold;
-          border-bottom: 1px solid #e6e6e6;
-        }
-    
-        .dropdown-content a:last-child {
-          border-bottom: none;
-        }
-    
-        .dropdown-content a:hover {
-          background-color: #f1f1f1;
-          color: #007bff;
-          
-        }
-      </style>
-    
-    
-      <div class="dropdown">
-        <button class="dropdown-btn" id="dropdownBtn" onclick="toggleDropdown()">Countries</button>
-        <div class="dropdown-content" id="dropdownContent">
-          <a href="#" onclick="switchCountry('canada')">Canada</a>
-          <a href="#" onclick="switchCountry('uk')">UK</a>
-          <a href="#" onclick="switchCountry('australia')">Australia</a>
-          <a href="#" onclick="switchCountry('newzealand')">New Zealand</a>
-          <a href="#" onclick="switchCountry('usa')">USA</a>
-          <a href="#" onclick="switchCountry('ireland')">Ireland</a>
-
-
-        </div>
+      /* Dropdown container styling */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+  
+      /* Dropdown button styling */
+      .dropdown-btn {
+        background: linear-gradient(135deg, #5f9cad, #8080bc);
+        color: white;
+        padding: 10px 20px;
+        font-size: 20px;
+        border: none;
+        font-weight: bold;
+        border-bottom-right-radius: 15px;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-top: -1px;
+      }
+  
+      .dropdown-btn:hover {
+        background-color: #0056b3;
+      }
+  
+      /* Dropdown menu styling */
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background: linear-gradient(135deg, #5f9cad, #8080bc);
+        min-width: 160px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        margin-top: 5px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        transform: translateX(-100%);
+        opacity: 0;
+        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+      }
+  
+      .dropdown-content.show {
+        display: block;
+        transform: translateX(0);
+        opacity: 1;
+      }
+  
+      /* Dropdown menu links */
+      .dropdown-content a {
+        color: #ffffff;
+        padding: 10px 20px;
+        text-decoration: none;
+        display: block;
+        font-weight: bold;
+        border-bottom: 1px solid #e6e6e6;
+      }
+  
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+  
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+        color: #007bff;
+      }
+    </style>
+  
+    <div class="dropdown">
+      <button class="dropdown-btn" id="dropdownBtn" onclick="toggleDropdown()">Countries</button>
+      <div class="dropdown-content" id="dropdownContent">
+        <a href="#" onclick="switchCountry('canada')">Canada</a>
+        <a href="#" onclick="switchCountry('uk')">UK</a>
+        <a href="#" onclick="switchCountry('australia')">Australia</a>
+        <a href="#" onclick="switchCountry('newzealand')">New Zealand</a>
+        <a href="#" onclick="switchCountry('usa')">USA</a>
+        <a href="#" onclick="switchCountry('ireland')">Ireland</a>
       </div>
-    
-      <script>
-        // Function to switch country and update dropdown text
-        function switchCountry(countryName) {
-          const dropdownBtn = document.getElementById("dropdownBtn");
-          dropdownBtn.textContent = countryName; // Update button text
-          console.log(`Switched to: ${countryName}`); // Log the change for debugging
-          toggleDropdown(); // Close the dropdown after selection
+    </div>
+  
+    <script>
+      // Function to switch country and update dropdown text
+      function switchCountry(countryName) {
+        const dropdownBtn = document.getElementById("dropdownBtn");
+        dropdownBtn.textContent = countryName; // Update button text
+        console.log(`Switched to: ${countryName}`); // Log the change for debugging
+        toggleDropdown(); // Close the dropdown after selection
+      }
+  
+      // Function to toggle the visibility of the dropdown menu
+      function toggleDropdown() {
+        const dropdownContent = document.getElementById("dropdownContent");
+        if (dropdownContent.classList.contains("show")) {
+          dropdownContent.classList.remove("show");
+          setTimeout(() => (dropdownContent.style.display = "none"), 300); // Allow animation to finish before hiding
+        } else {
+          dropdownContent.style.display = "block";
+          setTimeout(() => dropdownContent.classList.add("show"), 10); // Add a slight delay to allow transition to apply
         }
-    
-        // Function to toggle the visibility of the dropdown menu
-        function toggleDropdown() {
-          const dropdownContent = document.getElementById("dropdownContent");
-          dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
+      }
+  
+      // Close the dropdown if clicked outside
+      window.onclick = function(event) {
+        const dropdownContent = document.getElementById("dropdownContent");
+        const dropdownBtn = document.getElementById("dropdownBtn");
+        if (!dropdownBtn.contains(event.target) && !dropdownContent.contains(event.target)) {
+          dropdownContent.classList.remove("show");
+          setTimeout(() => (dropdownContent.style.display = "none"), 300);
         }
-    
-        // Close the dropdown if clicked outside
-        window.onclick = function(event) {
-          const dropdownContent = document.getElementById("dropdownContent");
-          const dropdownBtn = document.getElementById("dropdownBtn");
-          if (!dropdownBtn.contains(event.target) && !dropdownContent.contains(event.target)) {
-            dropdownContent.style.display = "none";
-          }
-        };
-      </script>
+      };
+    </script>
     
       
     
