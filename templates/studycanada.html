@@ -1034,6 +1034,59 @@
        
     }
 </script>
+
+<style>
+  .floating-buttons {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1000;
+  }
+
+  .floating-buttons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background-color: rgb(22, 100, 173);
+      color: white;
+      border-radius: 50%;
+      box-shadow: 0 4px 6px rgb(22, 100, 173);
+      text-decoration: none;
+      font-size: 24px;
+      transition: background-color 0.3s ease;
+  }
+
+  .floating-buttons a.phone {
+      background-color: rgb(22, 100, 173);
+  }
+
+  .floating-buttons a.mail {
+      background-color: rgb(22, 100, 173);
+  }
+
+  .floating-buttons a:hover {
+      opacity: 0.9;
+      background-color: rgb(22, 100, 173);
+  }
+</style>
+
+<div class="floating-buttons">
+  <a href="https://wa.me/YOUR_PHONE_NUMBER" target="_blank" title="WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <a href="tel:+YOUR_PHONE_NUMBER" class="phone" title="Call">
+      <i class="fa-solid fa-phone"></i>
+  </a>
+  <a href="mailto:YOUR_EMAIL@example.com" class="mail" title="Email">
+      <i class="fas fa-envelope"></i>
+  </a>
+</div>
+
 <footer class="footer-section">
     <div class="container">
         <div class="footer-cta pt-5 pb-5">
@@ -1112,7 +1165,7 @@
                 <div class="row"  style="display:flex;justify-content: center;align-items: center;">
                     <div class="col-xl-6 col-lg-6 text-center ">
                         <div class="copyright-text">
-                            <p>Copyright &copy; 2024, All Right Reserved <a href="https://codepen.io/anupkumar92/">Lifeplanner Studies and Oppertunities</a></p>
+                            <p>Copyright &copy; 2024, All Right Reserved <a href="">Lifeplanner Studies and Oppertunities</a></p>
                         </div>
                     </div>
                     
